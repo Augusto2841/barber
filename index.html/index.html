@@ -6,95 +6,155 @@
 <title>Club des Coiffeurs VIP</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #111, #333);
-    color: white;
-    text-align: center;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+    text-align:center;
 }
-
-h1 {
-    margin-top: 20px;
-    font-size: 32px;
+h1,h2{
+    color:#D4AF37;
 }
-
-.logo {
-    margin-top: 30px;
+.section{
+    padding:60px 20px;
 }
-
-.logo img {
-    width: 200px;
-    border-radius: 50%;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+.logo img{
+    width:200px;
+    border-radius:50%;
+    margin-top:30px;
+    box-shadow:0 0 25px rgba(212,175,55,0.6);
 }
-
-.whatsapp-btn {
-    display: inline-block;
-    margin: 30px 0;
-    padding: 15px 25px;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 8px;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+.buttons{
+    margin-top:20px;
 }
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+.btn{
+    display:inline-block;
+    margin:8px;
+    padding:15px 25px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
+.whatsapp{ background:#25D366; color:white; }
+.call{ background:#D4AF37; color:black; }
+.instagram{ background:#E1306C; color:white; }
+.google{ background:#4285F4; color:white; }
 
-.gallery img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+.gallery img{
+    width:100%;
+    max-width:280px;
+    border-radius:10px;
+}
+.pricing{
+    max-width:600px;
+    margin:0 auto;
+    text-align:left;
+}
+.pricing p{
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #444;
+    padding:10px 0;
+}
+iframe{
+    width:100%;
+    max-width:600px;
+    height:300px;
+    border:0;
+    border-radius:10px;
+}
+.footer{
+    background:#111;
+    padding:40px 20px;
+    font-size:14px;
+}
+.address{
+    font-size:14px;
+    color:#ccc;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="logo">
-    <img src="logo.jpg" alt="Club des Coiffeurs VIP">
+<img src="logo.jpg">
 </div>
 
 <h1>Club des Coiffeurs VIP</h1>
 
-<p>Salon de coiffure - Gatineau, Québec</p>
+<p>
+<b>FR :</b> Salon de coiffure premium à Gatineau<br>
+<b>ES :</b> Barbería premium en Gatineau
+</p>
 
-<a class="whatsapp-btn" href="https://wa.me/18196395598" target="_blank">
-📲 Réserver par WhatsApp
-</a>
-
-<div class="gallery">
-    <img src="imagenes/foto1.jpg">
-    <img src="imagenes/foto2.jpg">
-    <img src="imagenes/foto3.jpg">
-    <img src="imagenes/foto4.jpg">
-    <img src="imagenes/foto5.jpg">
-    <img src="imagenes/foto6.jpg">
-    <img src="imagenes/foto7.jpg">
+<div class="address">
+187 Rue Eddy, Gatineau, QC J8X 2X2
 </div>
 
-</body><section style="margin-top:60px; padding:40px 20px; background-color:#000;">
-  
-  <h2 style="font-size:24px; margin-bottom:20px;">
-    Notre Vision
-  </h2>
+<div class="buttons">
+<a class="btn whatsapp" href="https://wa.me/18196395598" target="_blank">📲 Réserver WhatsApp</a>
+<a class="btn call" href="tel:+18196395598">📞 Appeler</a>
+<a class="btn instagram" href="https://www.instagram.com/vip_club_barber" target="_blank">📸 Instagram</a>
+<a class="btn google" href="https://calendar.app.google/ZNzT9WHKE6FxxMBf9" target="_blank">📅 Réserver en ligne</a>
+</div>
 
-  <p style="max-width:700px; margin:0 auto; font-size:18px; line-height:1.6; color:#ccc;">
-    Nous sommes la preuve que tous les rêves peuvent devenir réalité 
-    avec suffisamment de discipline, de travail et de détermination.
-  </p>
+<div class="section">
+<h2>Galerie / Galería</h2>
+<div class="gallery">
+<img src="imagenes/foto1.jpg">
+<img src="imagenes/foto2.jpg">
+<img src="imagenes/foto3.jpg">
+<img src="imagenes/foto4.jpg">
+<img src="imagenes/foto5.jpg">
+<img src="imagenes/foto6.jpg">
+<img src="imagenes/foto7.jpg">
+</div>
+</div>
 
-  <p style="margin-top:25px; font-weight:bold; font-size:20px; color:#D4AF37;">
-    ✂ Club des Coiffeurs VIP
-  </p>
+<div class="section">
+<h2>Tarifs / Precios</h2>
+<div class="pricing">
+<p><span>Coupe Homme / Corte Hombre</span><span>$35</span></p>
+<p><span>Coupe + Barbe</span><span>$45</span></p>
+<p><span>Coupe Enfant / Niño</span><span>$25</span></p>
+<p><span>Barbe</span><span>$20</span></p>
+<p><span>Coupe VIP</span><span>$55</span></p>
+</div>
+</div>
 
-</section></html>
+<div class="section">
+<h2>Horaires / Horarios</h2>
+<p>Tous les jours / Todos los días</p>
+<p>11h00 – 19h00</p>
+</div>
+
+<div class="section">
+<h2>Localisation / Ubicación</h2>
+<iframe src="https://www.google.com/maps?q=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2&output=embed"></iframe>
+</div>
+
+<div class="section">
+<h2>Notre Vision / Nuestra Visión</h2>
+<p style="max-width:700px;margin:0 auto;">
+FR : Nous sommes la preuve que tous les rêves peuvent devenir réalité 
+avec suffisamment de discipline, de travail et de détermination.
+<br><br>
+ES : Somos la prueba de que todos los sueños se cumplen con suficiente disciplina,
+trabajo y determinación.
+</p>
+</div>
+
+<div class="footer">
+<p>© 2026 Club des Coiffeurs VIP</p>
+</div>
+
+</body>
+</html>
