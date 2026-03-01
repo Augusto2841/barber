@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club des Coiffeurs VIP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -29,10 +29,11 @@ padding:25px;
 
 header h1{
 letter-spacing:2px;
+font-weight:700;
 }
 
 .hero{
-background:url("foto1.jpg") center/cover no-repeat;
+background:url("imagenes/foto1.jpg") center/cover no-repeat;
 height:75vh;
 display:flex;
 align-items:center;
@@ -42,20 +43,23 @@ text-align:center;
 }
 
 .hero h2{
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.65);
 padding:20px 40px;
 border-radius:8px;
 font-size:34px;
 }
 
 section{
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
 }
 
 h2{
-margin-bottom:25px;
+margin-bottom:40px;
+font-size:30px;
 }
+
+/* SERVICES */
 
 .services{
 display:flex;
@@ -65,11 +69,48 @@ gap:30px;
 }
 
 .service{
-width:250px;
-padding:20px;
+width:260px;
+padding:25px;
 border:1px solid #eaeaea;
-border-radius:8px;
+border-radius:12px;
+transition:0.3s;
+background:#fff;
 }
+
+.service:hover{
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+transform:translateY(-5px);
+}
+
+.price{
+font-size:22px;
+font-weight:700;
+margin-top:15px;
+}
+
+.vip{
+border:2px solid #000;
+background:#000;
+color:white;
+transform:scale(1.05);
+}
+
+.vip .price{
+color:#FFD700;
+}
+
+.badge{
+background:#FFD700;
+color:#000;
+padding:5px 10px;
+font-size:12px;
+border-radius:20px;
+display:inline-block;
+margin-bottom:10px;
+font-weight:600;
+}
+
+/* GALLERY */
 
 .gallery{
 display:flex;
@@ -82,8 +123,10 @@ gap:15px;
 width:280px;
 height:280px;
 object-fit:cover;
-border-radius:8px;
+border-radius:10px;
 }
+
+/* BOOKING */
 
 .booking{
 background:#f5f5f5;
@@ -93,16 +136,23 @@ background:#f5f5f5;
 display:inline-block;
 margin:10px;
 padding:14px 28px;
-border-radius:25px;
+border-radius:30px;
 text-decoration:none;
 font-weight:600;
 color:white;
+transition:0.3s;
 }
 
-.btn-black{ background:#000; }
-.btn-green{ background:#25D366; }
+.button:hover{
+opacity:0.85;
+}
+
 .btn-blue{ background:#006aff; }
+.btn-green{ background:#25D366; }
+.btn-black{ background:#000; }
 .btn-purple{ background:#C13584; }
+
+/* FOOTER */
 
 footer{
 background:#000;
@@ -143,34 +193,61 @@ font-size:24px;
 
 <section>
 <h2>Nos Services</h2>
+
 <div class="services">
+
 <div class="service">
-<h3>Coupe</h3>
-<p>Coupe moderne et professionnelle.</p>
+<h3>Marcar Contornos</h3>
+<p>Definición y precisión profesional.</p>
+<div class="price">$15</div>
 </div>
 
 <div class="service">
-<h3>Barbe</h3>
-<p>Taille et entretien premium.</p>
+<h3>Corte para Niños</h3>
+<p>Estilo moderno y cómodo.</p>
+<div class="price">$25</div>
 </div>
 
 <div class="service">
-<h3>Coloration</h3>
-<p>Techniques modernes et tendance.</p>
+<h3>Corte Regular</h3>
+<p>Corte clásico profesional.</p>
+<div class="price">$35</div>
 </div>
+
+<div class="service">
+<h3>Rasurado Cabeza y Barba</h3>
+<p>Afeitado completo con acabado limpio.</p>
+<div class="price">$40</div>
+</div>
+
+<div class="service">
+<h3>Corte + Barba</h3>
+<p>Servicio completo y detallado.</p>
+<div class="price">$45</div>
+</div>
+
+<div class="service vip">
+<div class="badge">⭐ MÁS EXCLUSIVO</div>
+<h3>Corte VIP</h3>
+<p>Experiencia premium con atención personalizada.</p>
+<div class="price">$55</div>
+</div>
+
 </div>
 </section>
 
 <section>
 <h2>Galerie</h2>
 <div class="gallery">
-<img src="foto1.jpg">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-<img src="foto4.jpg">
-<img src="foto5.jpg">
-<img src="foto6.jpg">
-<img src="foto7.jpg">
+
+<img src="imagenes/foto1.jpg">
+<img src="imagenes/foto2.jpg">
+<img src="imagenes/foto3jpg.jpg">
+<img src="imagenes/foto4.jpg">
+<img src="imagenes/foto5.jpg">
+<img src="imagenes/foto6.jpg">
+<img src="imagenes/foto7.jpg">
+
 </div>
 </section>
 
@@ -178,7 +255,6 @@ font-size:24px;
 <h2>Réservez votre rendez-vous</h2>
 <p>Contactez-nous ou réservez en ligne</p>
 
-<!-- Citas Square -->
 <a class="button btn-blue"
 href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
 target="_top"
@@ -186,20 +262,17 @@ rel="nofollow">
 Réserver Maintenant
 </a>
 
-<!-- WhatsApp -->
 <a class="button btn-green"
 href="https://wa.me/18196395598"
 target="_blank">
 WhatsApp
 </a>
 
-<!-- Llamada directa -->
 <a class="button btn-black"
 href="tel:18196395598">
 Appeler
 </a>
 
-<!-- Instagram REAL -->
 <a class="button btn-purple"
 href="https://www.instagram.com/vip_club_barber"
 target="_blank">
