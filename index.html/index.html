@@ -5,156 +5,258 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club des Coiffeurs VIP</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
-body{
+*{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:black;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background-color:#ffffff;
+    color:#111;
+    overflow-x:hidden;
+}
+
+/* ANIMATIONS */
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 1s ease;
+}
+
+.fade-in.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* HEADER */
+header{
+    background:#000;
     color:white;
+    padding:20px;
+    text-align:center;
+    animation:fadeHeader 1.5s ease forwards;
+}
+
+@keyframes fadeHeader{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* HERO */
+.hero{
+    background:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f') center/cover no-repeat;
+    height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:42px;
+    background:rgba(0,0,0,0.6);
+    padding:20px 40px;
+    border-radius:10px;
+    animation:zoomIn 1.5s ease forwards;
+}
+
+@keyframes zoomIn{
+    from{opacity:0; transform:scale(0.8);}
+    to{opacity:1; transform:scale(1);}
+}
+
+/* SECTION */
+section{
+    padding:80px 20px;
     text-align:center;
 }
-h1,h2{
-    color:#D4AF37;
-}
-.section{
-    padding:60px 20px;
-}
-.logo img{
-    width:200px;
-    border-radius:50%;
-    margin-top:30px;
-    box-shadow:0 0 25px rgba(212,175,55,0.6);
-}
-.buttons{
-    margin-top:20px;
-}
-.btn{
-    display:inline-block;
-    margin:8px;
-    padding:15px 25px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
-.whatsapp{ background:#25D366; color:white; }
-.call{ background:#D4AF37; color:black; }
-.instagram{ background:#E1306C; color:white; }
-.google{ background:#4285F4; color:white; }
 
-.gallery{
+h2{
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+/* SERVICES */
+.services{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
+    gap:30px;
 }
-.gallery img{
-    width:100%;
-    max-width:280px;
-    border-radius:10px;
+
+.service-box{
+    width:250px;
+    padding:25px;
+    border:1px solid #eee;
+    border-radius:15px;
+    transition:0.4s;
+    background:white;
 }
-.pricing{
-    max-width:600px;
-    margin:0 auto;
-    text-align:left;
+
+.service-box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
-.pricing p{
+
+/* GALLERY */
+.gallery{
     display:flex;
-    justify-content:space-between;
-    border-bottom:1px solid #444;
-    padding:10px 0;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
 }
-iframe{
-    width:100%;
-    max-width:600px;
+
+.gallery img{
+    width:300px;
     height:300px;
-    border:0;
-    border-radius:10px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
 }
-.footer{
-    background:#111;
-    padding:40px 20px;
-    font-size:14px;
+
+.gallery img:hover{
+    transform:scale(1.05);
 }
-.address{
-    font-size:14px;
-    color:#ccc;
+
+/* BOOKING */
+.booking{
+    background:#f5f5f5;
+}
+
+.booking a{
+    background:#000;
+    color:white;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:20px;
+    transition:0.4s;
+}
+
+.booking a:hover{
+    background:#444;
+    transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact p{
+    margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+    background:#000;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .services{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .gallery img{
+        width:90%;
+        height:auto;
+    }
+
+    .hero h2{
+        font-size:28px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">
-<img src="logo.jpg">
+<header>
+    <h1>Club des Coiffeurs VIP</h1>
+    <p>Salon de Coiffure – Gatineau, Québec</p>
+</header>
+
+<div class="hero">
+    <h2>Style. Élégance. Excellence.</h2>
 </div>
 
-<h1>Club des Coiffeurs VIP</h1>
+<section class="fade-in">
+    <h2>Nos Services</h2>
+    <div class="services">
+        <div class="service-box">
+            <h3>Coupe</h3>
+            <p>Coupe moderne et professionnelle.</p>
+        </div>
+        <div class="service-box">
+            <h3>Barbe</h3>
+            <p>Taille et entretien premium.</p>
+        </div>
+        <div class="service-box">
+            <h3>Coloration</h3>
+            <p>Techniques modernes et tendance.</p>
+        </div>
+    </div>
+</section>
 
-<p>
-<b>FR :</b> Salon de coiffure premium à Gatineau<br>
-<b>ES :</b> Barbería premium en Gatineau
-</p>
+<section class="fade-in">
+    <h2>Galerie</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70">
+    </div>
+</section>
 
-<div class="address">
-187 Rue Eddy, Gatineau, QC J8X 2X2
-</div>
+<section class="booking fade-in">
+    <h2>Réservez votre rendez-vous</h2>
+    <p>Réservez facilement en ligne.</p>
 
-<div class="buttons">
-<a class="btn whatsapp" href="https://wa.me/18196395598" target="_blank">📲 Réserver WhatsApp</a>
-<a class="btn call" href="tel:+18196395598">📞 Appeler</a>
-<a class="btn instagram" href="https://www.instagram.com/vip_club_barber" target="_blank">📸 Instagram</a>
-<a class="btn google" href="https://calendar.app.google/ZNzT9WHKE6FxxMBf9" target="_blank">📅 Réserver en ligne</a>
-</div>
+    <a target="_top"
+       href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+       rel="nofollow">
+       RÉSERVER MAINTENANT
+    </a>
+</section>
 
-<div class="section">
-<h2>Galerie / Galería</h2>
-<div class="gallery">
-<img src="imagenes/foto1.jpg">
-<img src="imagenes/foto2.jpg">
-<img src="imagenes/foto3.jpg">
-<img src="imagenes/foto4.jpg">
-<img src="imagenes/foto5.jpg">
-<img src="imagenes/foto6.jpg">
-<img src="imagenes/foto7.jpg">
-</div>
-</div>
+<section class="contact fade-in">
+    <h2>Contact</h2>
+    <p>📍 Gatineau, Québec, Canada</p>
+    <p>📞 819-639-5598</p>
+</section>
 
-<div class="section">
-<h2>Tarifs / Precios</h2>
-<div class="pricing">
-<p><span>Coupe Homme / Corte Hombre</span><span>$35</span></p>
-<p><span>Coupe + Barbe</span><span>$45</span></p>
-<p><span>Coupe Enfant / Niño</span><span>$25</span></p>
-<p><span>Barbe</span><span>$20</span></p>
-<p><span>Coupe VIP</span><span>$55</span></p>
-</div>
-</div>
+<footer>
+    © 2026 Club des Coiffeurs VIP – Tous droits réservés
+</footer>
 
-<div class="section">
-<h2>Horaires / Horarios</h2>
-<p>Tous les jours / Todos los días</p>
-<p>11h00 – 19h00</p>
-</div>
+<script>
+const faders = document.querySelectorAll('.fade-in');
 
-<div class="section">
-<h2>Localisation / Ubicación</h2>
-<iframe src="https://www.google.com/maps?q=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2&output=embed"></iframe>
-</div>
+const appearOptions = {
+    threshold: 0.3
+};
 
-<div class="section">
-<h2>Notre Vision / Nuestra Visión</h2>
-<p style="max-width:700px;margin:0 auto;">
-FR : Nous sommes la preuve que tous les rêves peuvent devenir réalité 
-avec suffisamment de discipline, de travail et de détermination.
-<br><br>
-ES : Somos la prueba de que todos los sueños se cumplen con suficiente disciplina,
-trabajo y determinación.
-</p>
-</div>
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
 
-<div class="footer">
-<p>© 2026 Club des Coiffeurs VIP</p>
-</div>
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
 
 </body>
 </html>
