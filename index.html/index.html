@@ -9,172 +9,123 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
 }
 
 body{
-    background-color:#ffffff;
-    color:#111;
-    overflow-x:hidden;
+background:#ffffff;
+color:#111;
 }
 
-/* ANIMATIONS */
-.fade-in{
-    opacity:0;
-    transform:translateY(40px);
-    transition:all 1s ease;
-}
-
-.fade-in.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* HEADER */
 header{
-    background:#000;
-    color:white;
-    padding:20px;
-    text-align:center;
-    animation:fadeHeader 1.5s ease forwards;
+background:#000;
+color:white;
+text-align:center;
+padding:25px;
 }
 
-@keyframes fadeHeader{
-    from{opacity:0; transform:translateY(-20px);}
-    to{opacity:1; transform:translateY(0);}
+header h1{
+letter-spacing:2px;
 }
 
-/* HERO */
 .hero{
-    background:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f') center/cover no-repeat;
-    height:80vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
+background:url("foto1.jpg") center/cover no-repeat;
+height:75vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
 }
 
 .hero h2{
-    font-size:42px;
-    background:rgba(0,0,0,0.6);
-    padding:20px 40px;
-    border-radius:10px;
-    animation:zoomIn 1.5s ease forwards;
+background:rgba(0,0,0,0.6);
+padding:20px 40px;
+border-radius:8px;
+font-size:34px;
 }
 
-@keyframes zoomIn{
-    from{opacity:0; transform:scale(0.8);}
-    to{opacity:1; transform:scale(1);}
-}
-
-/* SECTION */
 section{
-    padding:80px 20px;
-    text-align:center;
+padding:60px 20px;
+text-align:center;
 }
 
 h2{
-    font-size:32px;
-    margin-bottom:30px;
+margin-bottom:25px;
 }
 
-/* SERVICES */
 .services{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
-.service-box{
-    width:250px;
-    padding:25px;
-    border:1px solid #eee;
-    border-radius:15px;
-    transition:0.4s;
-    background:white;
+.service{
+width:250px;
+padding:20px;
+border:1px solid #eaeaea;
+border-radius:8px;
 }
 
-.service-box:hover{
-    transform:translateY(-10px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
-
-/* GALLERY */
 .gallery{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
 }
 
 .gallery img{
-    width:300px;
-    height:300px;
-    object-fit:cover;
-    border-radius:15px;
-    transition:0.4s;
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:8px;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
-}
-
-/* BOOKING */
 .booking{
-    background:#f5f5f5;
+background:#f5f5f5;
 }
 
-.booking a{
-    background:#000;
-    color:white;
-    padding:15px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    display:inline-block;
-    margin-top:20px;
-    transition:0.4s;
+.button{
+display:inline-block;
+margin:10px;
+padding:14px 28px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
+color:white;
 }
 
-.booking a:hover{
-    background:#444;
-    transform:scale(1.05);
-}
+.btn-black{ background:#000; }
+.btn-green{ background:#25D366; }
+.btn-blue{ background:#006aff; }
+.btn-purple{ background:#C13584; }
 
-/* CONTACT */
-.contact p{
-    margin:10px 0;
-}
-
-/* FOOTER */
 footer{
-    background:#000;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+background:#000;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
-    .services{
-        flex-direction:column;
-        align-items:center;
-    }
+.services{
+flex-direction:column;
+align-items:center;
+}
 
-    .gallery img{
-        width:90%;
-        height:auto;
-    }
+.gallery img{
+width:90%;
+height:auto;
+}
 
-    .hero h2{
-        font-size:28px;
-    }
+.hero h2{
+font-size:24px;
+}
 }
 </style>
 </head>
@@ -182,81 +133,90 @@ footer{
 <body>
 
 <header>
-    <h1>Club des Coiffeurs VIP</h1>
-    <p>Salon de Coiffure – Gatineau, Québec</p>
+<h1>Club des Coiffeurs VIP</h1>
+<p>Salon de Coiffure – Gatineau, Québec</p>
 </header>
 
 <div class="hero">
-    <h2>Style. Élégance. Excellence.</h2>
+<h2>Style. Élégance. Excellence.</h2>
 </div>
 
-<section class="fade-in">
-    <h2>Nos Services</h2>
-    <div class="services">
-        <div class="service-box">
-            <h3>Coupe</h3>
-            <p>Coupe moderne et professionnelle.</p>
-        </div>
-        <div class="service-box">
-            <h3>Barbe</h3>
-            <p>Taille et entretien premium.</p>
-        </div>
-        <div class="service-box">
-            <h3>Coloration</h3>
-            <p>Techniques modernes et tendance.</p>
-        </div>
-    </div>
+<section>
+<h2>Nos Services</h2>
+<div class="services">
+<div class="service">
+<h3>Coupe</h3>
+<p>Coupe moderne et professionnelle.</p>
+</div>
+
+<div class="service">
+<h3>Barbe</h3>
+<p>Taille et entretien premium.</p>
+</div>
+
+<div class="service">
+<h3>Coloration</h3>
+<p>Techniques modernes et tendance.</p>
+</div>
+</div>
 </section>
 
-<section class="fade-in">
-    <h2>Galerie</h2>
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70">
-    </div>
+<section>
+<h2>Galerie</h2>
+<div class="gallery">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+<img src="foto4.jpg">
+<img src="foto5.jpg">
+<img src="foto6.jpg">
+<img src="foto7.jpg">
+</div>
 </section>
 
-<section class="booking fade-in">
-    <h2>Réservez votre rendez-vous</h2>
-    <p>Réservez facilement en ligne.</p>
+<section class="booking">
+<h2>Réservez votre rendez-vous</h2>
+<p>Contactez-nous ou réservez en ligne</p>
 
-    <a target="_top"
-       href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
-       rel="nofollow">
-       RÉSERVER MAINTENANT
-    </a>
+<!-- Citas Square -->
+<a class="button btn-blue"
+href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+target="_top"
+rel="nofollow">
+Réserver Maintenant
+</a>
+
+<!-- WhatsApp -->
+<a class="button btn-green"
+href="https://wa.me/18196395598"
+target="_blank">
+WhatsApp
+</a>
+
+<!-- Llamada directa -->
+<a class="button btn-black"
+href="tel:18196395598">
+Appeler
+</a>
+
+<!-- Instagram REAL -->
+<a class="button btn-purple"
+href="https://www.instagram.com/vip_club_barber"
+target="_blank">
+Instagram
+</a>
+
 </section>
 
-<section class="contact fade-in">
-    <h2>Contact</h2>
-    <p>📍 Gatineau, Québec, Canada</p>
-    <p>📞 819-639-5598</p>
+<section>
+<h2>Contact</h2>
+<p>📍 Gatineau, Québec, Canada</p>
+<p>📞 819-639-5598</p>
 </section>
 
 <footer>
-    © 2026 Club des Coiffeurs VIP – Tous droits réservés
+© 2026 Club des Coiffeurs VIP – Tous droits réservés
 </footer>
-
-<script>
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.3
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-</script>
 
 </body>
 </html>
