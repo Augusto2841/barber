@@ -11,17 +11,17 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-background:#111;
+background:#0a0a0a;
 color:#fff;
 overflow-x:hidden;
 }
 
-/* FONDO LOGO */
+/* LOGO FONDO MÁS VISIBLE */
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
-background-size:600px;
-opacity:0.08;
+background-size:650px;
+opacity:0.15;
 position:fixed;
 top:0;
 left:0;
@@ -30,20 +30,37 @@ height:100%;
 z-index:-1;
 }
 
+/* ANIMACIÓN TIPO APPLE */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s cubic-bezier(.19,1,.22,1);
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
 /* HEADER */
 .top-header{
 background:#000;
 text-align:center;
-padding:70px 20px;
+padding:90px 20px;
 position:relative;
 }
 
 .logo{
 width:150px;
 margin-bottom:25px;
+opacity:0.4; /* MÁS DESVANECIDO */
+transition:0.5s ease;
 }
 
-/* IDIOMAS */
+.logo:hover{
+opacity:0.8;
+}
+
 .language-switch{
 position:absolute;
 top:20px;
@@ -52,25 +69,13 @@ right:20px;
 
 .language-switch button{
 background:transparent;
-border:1px solid #FFD700;
-color:#FFD700;
+border:1px solid #D4AF37;
+color:#D4AF37;
 padding:6px 12px;
 margin-left:5px;
 border-radius:20px;
 cursor:pointer;
 font-size:12px;
-}
-
-/* MENSAJE */
-.brand-message{
-margin-top:20px;
-font-size:15px;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-line-height:1.8;
-letter-spacing:1.2px;
-color:#FFD700;
 }
 
 /* BOTONES */
@@ -88,86 +93,134 @@ border-radius:40px;
 text-decoration:none;
 font-weight:600;
 font-size:14px;
-transition:0.3s ease;
+transition:0.4s;
 }
 
 .btn-primary{
-background:#FFD700;
+background:#D4AF37;
 color:#000;
 }
 
+.btn-primary:hover{
+transform:translateY(-4px);
+}
+
 .btn-outline{
-border:1px solid #FFD700;
-color:#FFD700;
+border:1px solid #D4AF37;
+color:#D4AF37;
 background:transparent;
 }
 
 .btn-outline:hover{
-background:#FFD700;
+background:#D4AF37;
 color:#000;
 }
 
 /* SECTIONS */
 section{
-padding:80px 20px;
+padding:100px 20px;
 text-align:center;
 }
 
 h2{
-margin-bottom:40px;
-color:#FFD700;
+margin-bottom:50px;
+color:#D4AF37;
+font-size:32px;
 }
 
 /* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:20px;
-max-width:900px;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:25px;
+max-width:1000px;
 margin:auto;
 }
 
 .service{
-padding:18px;
-border:1px solid #333;
-border-radius:10px;
-background:#1c1c1c;
+padding:25px;
+border:1px solid #222;
+border-radius:15px;
+background:#111;
+transition:0.5s;
+}
+
+.service:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 40px rgba(212,175,55,0.2);
 }
 
 .price{
-font-weight:700;
-margin-top:6px;
-color:#FFD700;
+font-size:18px;
+margin-top:10px;
+color:#D4AF37;
+font-weight:600;
 }
 
 /* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+gap:20px;
 }
 
 .gallery img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
-border-radius:10px;
-cursor:pointer;
+border-radius:15px;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* RESEÑAS ESTILO GOOGLE */
+.reviews{
+max-width:900px;
+margin:auto;
+display:grid;
+gap:25px;
+}
+
+.review{
+background:#111;
+padding:25px;
+border-radius:15px;
+border:1px solid #222;
+text-align:left;
+}
+
+.stars{
+color:#D4AF37;
+margin-bottom:10px;
+font-size:18px;
+}
+
+/* MENSAJE FINAL */
+.final-message{
+background:#000;
+padding:80px 20px;
+font-size:18px;
+color:#D4AF37;
+text-align:center;
+line-height:1.8;
 }
 
 /* FOOTER */
 footer{
 background:#000;
-padding:20px;
+padding:25px;
 text-align:center;
-color:#aaa;
+color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<header class="top-header">
+<header class="top-header reveal">
 
 <div class="language-switch">
 <button onclick="setLanguage('fr')">FR</button>
@@ -180,10 +233,6 @@ color:#aaa;
 <h1>Club des Coiffeurs VIP</h1>
 <p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
 
-<p class="brand-message" id="brandText">
-Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
-</p>
-
 <div class="top-buttons">
 <a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
 <a href="https://wa.me/18196395598" class="btn-outline">WhatsApp</a>
@@ -192,16 +241,20 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 
 </header>
 
-<section>
+<section class="reveal">
 <h2 id="servicesTitle">Nos Services</h2>
 <div class="services">
-<div class="service"><h3>Coupe Régulière</h3><div class="price">$35</div></div>
-<div class="service"><h3>Coupe + Barbe</h3><div class="price">$45</div></div>
-<div class="service"><h3>Coupe VIP</h3><div class="price">$55</div></div>
+<div class="service"><h3>Marcar Contornos</h3><div class="price">$15</div></div>
+<div class="service"><h3>Corte de Pelo para Niños</h3><div class="price">$25</div></div>
+<div class="service"><h3>Corte Regular</h3><div class="price">$35</div></div>
+<div class="service"><h3>Rasurado</h3><div class="price">$25</div></div>
+<div class="service"><h3>Rasurado + Barba</h3><div class="price">$40</div></div>
+<div class="service"><h3>Corte + Barba</h3><div class="price">$45</div></div>
+<div class="service"><h3>Corte VIP</h3><div class="price">$55</div></div>
 </div>
 </section>
 
-<section>
+<section class="reveal">
 <h2>Galerie</h2>
 <div class="gallery">
 <img src="imagenes/foto1.jpg">
@@ -222,31 +275,46 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 </div>
 </section>
 
+<section class="reveal">
+<h2>Avis Clients</h2>
+<div class="reviews">
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Excelente servicio y atención. La mejor barbería en Gatineau.</p>
+<strong>- Carlos M.</strong>
+</div>
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Profesionalismo y calidad en cada corte. Totalmente recomendado.</p>
+<strong>- Michael D.</strong>
+</div>
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>Ambiente premium y resultados impecables.</p>
+<strong>- Jean P.</strong>
+</div>
+</div>
+</section>
+
+<section class="final-message reveal" id="brandText">
+Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
+</section>
+
 <footer>
 © 2026 Club des Coiffeurs VIP
 </footer>
 
 <script>
-function setLanguage(lang){
-if(lang==="es"){
-document.getElementById("subtitle").innerText="Salón de Barbería – Gatineau, Québec";
-document.getElementById("servicesTitle").innerText="Nuestros Servicios";
-document.getElementById("brandText").innerText=
-"Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.";
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+reveals.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+el.classList.add("active");
 }
-if(lang==="en"){
-document.getElementById("subtitle").innerText="Barbershop – Gatineau, Quebec";
-document.getElementById("servicesTitle").innerText="Our Services";
-document.getElementById("brandText").innerText=
-"We are living proof that dreams come true with discipline, dedication and determination.";
-}
-if(lang==="fr"){
-document.getElementById("subtitle").innerText="Salon de Coiffure – Gatineau, Québec";
-document.getElementById("servicesTitle").innerText="Nos Services";
-document.getElementById("brandText").innerText=
-"Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination.";
-}
-}
+});
+});
 </script>
 
 </body>
