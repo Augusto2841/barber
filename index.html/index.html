@@ -21,13 +21,13 @@ color:#111;
 position:relative;
 }
 
-/* LOGO MARCA DE AGUA */
+/* LOGO DE FONDO MÁS VISIBLE */
 
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
-background-size:400px;
-opacity:0.04;
+background-size:550px;
+opacity:0.08;
 position:fixed;
 top:0;
 left:0;
@@ -165,6 +165,8 @@ color:white;
 color:#FFD700;
 }
 
+/* GALLERY */
+
 .gallery{
 display:flex;
 flex-wrap:wrap;
@@ -178,6 +180,8 @@ height:260px;
 object-fit:cover;
 border-radius:10px;
 }
+
+/* FOOTER */
 
 footer{
 background:#000;
@@ -228,7 +232,6 @@ height:auto;
 <section class="address">
 
 <h2 id="locationTitle">Location</h2>
-
 <p id="addressText">187 Rue Eddy, Gatineau, QC J8X 2X2</p>
 
 <a href="https://maps.app.goo.gl/JuSRuyYkVgwc7JQj6"
