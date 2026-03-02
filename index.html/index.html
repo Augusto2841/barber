@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,25 +35,29 @@ margin-bottom:25px;
 opacity:0.9;
 }
 
-.top-header h1{
-letter-spacing:3px;
-font-weight:700;
-margin-bottom:10px;
+.language-switch{
+position:absolute;
+top:20px;
+right:20px;
 }
 
-.top-header p{
-opacity:0.6;
-margin-bottom:40px;
-font-size:14px;
+.language-switch button{
+background:transparent;
+border:1px solid white;
+color:white;
+padding:5px 10px;
+margin-left:5px;
+border-radius:20px;
+cursor:pointer;
+font-size:12px;
 }
-
-/* BOTONES MÁS LLAMATIVOS */
 
 .top-buttons{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 gap:15px;
+margin-top:30px;
 }
 
 .top-buttons a{
@@ -62,41 +66,21 @@ border-radius:40px;
 text-decoration:none;
 font-weight:600;
 font-size:14px;
-letter-spacing:0.5px;
 transition:0.3s ease;
 }
 
-/* RESERVA DESTACADO */
 .btn-primary{
 background:#ffffff;
 color:#000;
 }
 
-.btn-primary:hover{
-background:#e5e5e5;
-transform:translateY(-3px);
-}
-
-/* BOTONES SECUNDARIOS */
 .btn-outline{
 border:1px solid rgba(255,255,255,0.7);
 color:white;
 background:transparent;
 }
 
-.btn-outline:hover{
-background:rgba(255,255,255,0.1);
-border-color:white;
-}
-
-/* HERO SOLO IMAGEN */
-
-.hero{
-background:url("imagenes/foto1.jpg") center/cover no-repeat;
-height:55vh;
-}
-
-/* SECCIONES */
+/* SECTIONS */
 
 section{
 padding:70px 20px;
@@ -107,8 +91,6 @@ h2{
 margin-bottom:40px;
 font-size:28px;
 }
-
-/* SERVICIOS */
 
 .services{
 display:flex;
@@ -122,13 +104,7 @@ width:260px;
 padding:25px;
 border:1px solid #eaeaea;
 border-radius:12px;
-transition:0.3s;
 background:#fff;
-}
-
-.service:hover{
-box-shadow:0 15px 30px rgba(0,0,0,0.08);
-transform:translateY(-4px);
 }
 
 .price{
@@ -147,19 +123,6 @@ color:white;
 color:#FFD700;
 }
 
-.badge{
-background:#FFD700;
-color:#000;
-padding:4px 10px;
-font-size:12px;
-border-radius:20px;
-display:inline-block;
-margin-bottom:10px;
-font-weight:600;
-}
-
-/* GALERÍA */
-
 .gallery{
 display:flex;
 flex-wrap:wrap;
@@ -174,27 +137,12 @@ object-fit:cover;
 border-radius:10px;
 }
 
-/* FOOTER */
-
 footer{
 background:#000;
 color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
-font-size:14px;
-}
-
-@media(max-width:768px){
-.services{
-flex-direction:column;
-align-items:center;
-}
-
-.gallery img{
-width:90%;
-height:auto;
-}
 }
 </style>
 </head>
@@ -203,75 +151,58 @@ height:auto;
 
 <header class="top-header">
 
-<img src="logo.jpg" alt="Club des Coiffeurs VIP Logo" class="logo">
+<div class="language-switch">
+<button onclick="setLanguage('fr')">FR</button>
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('es')">ES</button>
+</div>
 
-<h1>Club des Coiffeurs VIP</h1>
-<p>Salon de Coiffure – Gatineau, Québec</p>
+<img src="logo.jpg" class="logo">
+
+<h1 id="title">Club des Coiffeurs VIP</h1>
+<p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
 
 <div class="top-buttons">
-
-<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
-   target="_top"
-   class="btn-primary">
-Réserver
-</a>
-
-<a href="https://wa.me/18196395598"
-   target="_blank"
-   class="btn-outline">
-WhatsApp
-</a>
-
-<a href="tel:18196395598"
-   class="btn-outline">
-Appeler
-</a>
-
-<a href="https://www.instagram.com/vip_club_barber"
-   target="_blank"
-   class="btn-outline">
-Instagram
-</a>
-
+<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" target="_top" class="btn-primary" id="btnReserve">Réserver</a>
+<a href="https://wa.me/18196395598" target="_blank" class="btn-outline">WhatsApp</a>
+<a href="tel:18196395598" class="btn-outline" id="btnCall">Appeler</a>
+<a href="https://www.instagram.com/vip_club_barber" target="_blank" class="btn-outline">Instagram</a>
 </div>
 
 </header>
 
-<div class="hero"></div>
-
 <section>
-<h2>Nos Services</h2>
+<h2 id="servicesTitle">Nos Services</h2>
 
 <div class="services">
 
 <div class="service">
-<h3>Marcar Contornos</h3>
+<h3 id="s1">Marcar Contornos</h3>
 <div class="price">$15</div>
 </div>
 
 <div class="service">
-<h3>Corte para Niños</h3>
+<h3 id="s2">Corte para Niños</h3>
 <div class="price">$25</div>
 </div>
 
 <div class="service">
-<h3>Corte Regular</h3>
+<h3 id="s3">Corte Regular</h3>
 <div class="price">$35</div>
 </div>
 
 <div class="service">
-<h3>Rasurado Cabeza y Barba</h3>
+<h3 id="s4">Rasurado Cabeza y Barba</h3>
 <div class="price">$40</div>
 </div>
 
 <div class="service">
-<h3>Corte + Barba</h3>
+<h3 id="s5">Corte + Barba</h3>
 <div class="price">$45</div>
 </div>
 
 <div class="service vip">
-<div class="badge">VIP</div>
-<h3>Corte VIP</h3>
+<h3 id="s6">Corte VIP</h3>
 <div class="price">$55</div>
 </div>
 
@@ -279,9 +210,9 @@ Instagram
 </section>
 
 <section>
-<h2>Galerie</h2>
-<div class="gallery">
+<h2 id="galleryTitle">Galerie</h2>
 
+<div class="gallery">
 <img src="imagenes/foto1.jpg">
 <img src="imagenes/foto2.jpg">
 <img src="imagenes/foto3jpg.jpg">
@@ -289,13 +220,43 @@ Instagram
 <img src="imagenes/foto5.jpg">
 <img src="imagenes/foto6.jpg">
 <img src="imagenes/foto7.jpg">
-
 </div>
+
 </section>
 
 <footer>
-© 2026 Club des Coiffeurs VIP – Tous droits réservés
+© 2026 Club des Coiffeurs VIP
 </footer>
+
+<script>
+function setLanguage(lang){
+
+if(lang === "fr"){
+document.getElementById("subtitle").innerText = "Salon de Coiffure – Gatineau, Québec";
+document.getElementById("servicesTitle").innerText = "Nos Services";
+document.getElementById("galleryTitle").innerText = "Galerie";
+document.getElementById("btnReserve").innerText = "Réserver";
+document.getElementById("btnCall").innerText = "Appeler";
+}
+
+if(lang === "en"){
+document.getElementById("subtitle").innerText = "Hair Salon – Gatineau, Quebec";
+document.getElementById("servicesTitle").innerText = "Our Services";
+document.getElementById("galleryTitle").innerText = "Gallery";
+document.getElementById("btnReserve").innerText = "Book Now";
+document.getElementById("btnCall").innerText = "Call";
+}
+
+if(lang === "es"){
+document.getElementById("subtitle").innerText = "Salón de Barbería – Gatineau, Quebec";
+document.getElementById("servicesTitle").innerText = "Nuestros Servicios";
+document.getElementById("galleryTitle").innerText = "Galería";
+document.getElementById("btnReserve").innerText = "Reservar";
+document.getElementById("btnCall").innerText = "Llamar";
+}
+
+}
+</script>
 
 </body>
 </html>
