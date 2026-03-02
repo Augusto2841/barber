@@ -18,6 +18,22 @@ font-family:'Poppins', sans-serif;
 body{
 background:#ffffff;
 color:#111;
+position:relative;
+}
+
+/* LOGO MARCA DE AGUA */
+
+body::before{
+content:"";
+background:url("logo.jpg") no-repeat center;
+background-size:400px;
+opacity:0.04;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 /* HEADER */
@@ -27,12 +43,13 @@ background:#000;
 color:white;
 text-align:center;
 padding:60px 20px;
+position:relative;
 }
 
 .logo{
 width:160px;
 margin-bottom:25px;
-opacity:0.9;
+opacity:0.85;
 }
 
 .language-switch{
@@ -92,6 +109,31 @@ margin-bottom:40px;
 font-size:28px;
 }
 
+/* ADDRESS */
+
+.address{
+background:#f7f7f7;
+}
+
+.address p{
+margin:10px 0;
+font-size:16px;
+font-weight:500;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 26px;
+border-radius:30px;
+background:#000;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SERVICES */
+
 .services{
 display:flex;
 flex-wrap:wrap;
@@ -144,6 +186,18 @@ text-align:center;
 padding:20px;
 margin-top:40px;
 }
+
+@media(max-width:768px){
+.services{
+flex-direction:column;
+align-items:center;
+}
+
+.gallery img{
+width:90%;
+height:auto;
+}
+}
 </style>
 </head>
 
@@ -159,7 +213,7 @@ margin-top:40px;
 
 <img src="logo.jpg" class="logo">
 
-<h1 id="title">Club des Coiffeurs VIP</h1>
+<h1>Club des Coiffeurs VIP</h1>
 <p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
 
 <div class="top-buttons">
@@ -171,40 +225,32 @@ margin-top:40px;
 
 </header>
 
+<section class="address">
+
+<h2 id="locationTitle">Location</h2>
+
+<p id="addressText">187 Rue Eddy, Gatineau, QC J8X 2X2</p>
+
+<a href="https://maps.app.goo.gl/JuSRuyYkVgwc7JQj6"
+   target="_blank"
+   class="map-btn"
+   id="mapButton">
+View on Google Maps
+</a>
+
+</section>
+
 <section>
 <h2 id="servicesTitle">Nos Services</h2>
 
 <div class="services">
 
-<div class="service">
-<h3 id="s1">Marcar Contornos</h3>
-<div class="price">$15</div>
-</div>
-
-<div class="service">
-<h3 id="s2">Corte para Niños</h3>
-<div class="price">$25</div>
-</div>
-
-<div class="service">
-<h3 id="s3">Corte Regular</h3>
-<div class="price">$35</div>
-</div>
-
-<div class="service">
-<h3 id="s4">Rasurado Cabeza y Barba</h3>
-<div class="price">$40</div>
-</div>
-
-<div class="service">
-<h3 id="s5">Corte + Barba</h3>
-<div class="price">$45</div>
-</div>
-
-<div class="service vip">
-<h3 id="s6">Corte VIP</h3>
-<div class="price">$55</div>
-</div>
+<div class="service"><h3 id="s1">Marcar Contornos</h3><div class="price">$15</div></div>
+<div class="service"><h3 id="s2">Corte para Niños</h3><div class="price">$25</div></div>
+<div class="service"><h3 id="s3">Corte Regular</h3><div class="price">$35</div></div>
+<div class="service"><h3 id="s4">Rasurado Cabeza y Barba</h3><div class="price">$40</div></div>
+<div class="service"><h3 id="s5">Corte + Barba</h3><div class="price">$45</div></div>
+<div class="service vip"><h3 id="s6">Corte VIP</h3><div class="price">$55</div></div>
 
 </div>
 </section>
@@ -231,30 +277,53 @@ margin-top:40px;
 <script>
 function setLanguage(lang){
 
-if(lang === "fr"){
-document.getElementById("subtitle").innerText = "Salon de Coiffure – Gatineau, Québec";
-document.getElementById("servicesTitle").innerText = "Nos Services";
-document.getElementById("galleryTitle").innerText = "Galerie";
-document.getElementById("btnReserve").innerText = "Réserver";
-document.getElementById("btnCall").innerText = "Appeler";
+if(lang==="fr"){
+document.getElementById("subtitle").innerText="Salon de Coiffure – Gatineau, Québec";
+document.getElementById("servicesTitle").innerText="Nos Services";
+document.getElementById("galleryTitle").innerText="Galerie";
+document.getElementById("btnReserve").innerText="Réserver";
+document.getElementById("btnCall").innerText="Appeler";
+document.getElementById("locationTitle").innerText="Localisation";
+document.getElementById("mapButton").innerText="Voir sur Google Maps";
+document.getElementById("s1").innerText="Définition des Contours";
+document.getElementById("s2").innerText="Coupe Enfant";
+document.getElementById("s3").innerText="Coupe Classique";
+document.getElementById("s4").innerText="Rasage Tête et Barbe";
+document.getElementById("s5").innerText="Coupe + Barbe";
+document.getElementById("s6").innerText="Coupe VIP";
 }
 
-if(lang === "en"){
-document.getElementById("subtitle").innerText = "Hair Salon – Gatineau, Quebec";
-document.getElementById("servicesTitle").innerText = "Our Services";
-document.getElementById("galleryTitle").innerText = "Gallery";
-document.getElementById("btnReserve").innerText = "Book Now";
-document.getElementById("btnCall").innerText = "Call";
+if(lang==="en"){
+document.getElementById("subtitle").innerText="Hair Salon – Gatineau, Quebec";
+document.getElementById("servicesTitle").innerText="Our Services";
+document.getElementById("galleryTitle").innerText="Gallery";
+document.getElementById("btnReserve").innerText="Book Now";
+document.getElementById("btnCall").innerText="Call";
+document.getElementById("locationTitle").innerText="Location";
+document.getElementById("mapButton").innerText="View on Google Maps";
+document.getElementById("s1").innerText="Edge Line Up";
+document.getElementById("s2").innerText="Kids Haircut";
+document.getElementById("s3").innerText="Regular Haircut";
+document.getElementById("s4").innerText="Head & Beard Shave";
+document.getElementById("s5").innerText="Haircut + Beard";
+document.getElementById("s6").innerText="VIP Haircut";
 }
 
-if(lang === "es"){
-document.getElementById("subtitle").innerText = "Salón de Barbería – Gatineau, Quebec";
-document.getElementById("servicesTitle").innerText = "Nuestros Servicios";
-document.getElementById("galleryTitle").innerText = "Galería";
-document.getElementById("btnReserve").innerText = "Reservar";
-document.getElementById("btnCall").innerText = "Llamar";
+if(lang==="es"){
+document.getElementById("subtitle").innerText="Salón de Barbería – Gatineau, Quebec";
+document.getElementById("servicesTitle").innerText="Nuestros Servicios";
+document.getElementById("galleryTitle").innerText="Galería";
+document.getElementById("btnReserve").innerText="Reservar";
+document.getElementById("btnCall").innerText="Llamar";
+document.getElementById("locationTitle").innerText="Ubicación";
+document.getElementById("mapButton").innerText="Ver en Google Maps";
+document.getElementById("s1").innerText="Marcar Contornos";
+document.getElementById("s2").innerText="Corte para Niños";
+document.getElementById("s3").innerText="Corte Regular";
+document.getElementById("s4").innerText="Rasurado Cabeza y Barba";
+document.getElementById("s5").innerText="Corte + Barba";
+document.getElementById("s6").innerText="Corte VIP";
 }
-
 }
 </script>
 
