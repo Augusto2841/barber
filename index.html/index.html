@@ -6,40 +6,15 @@
 <title>Club des Coiffeurs VIP | Barbería en Gatineau QC</title>
 
 <meta name="description" content="Club des Coiffeurs VIP es una barbería premium en Gatineau, Québec. Ofrecemos cortes modernos, rasurado, barba y servicios VIP con atención profesional.">
-<meta name="keywords" content="barbería en Gatineau, salon de coiffure Gatineau, barbershop Gatineau, corte de pelo Gatineau, rasurado Gatineau, Club des Coiffeurs VIP">
-<meta name="author" content="Club des Coiffeurs VIP">
 <meta name="theme-color" content="#0a0a0a">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "Barbershop",
-"name": "Club des Coiffeurs VIP",
-"image": "logo.jpg",
-"address": {
-  "@type": "PostalAddress",
-  "streetAddress": "187 Rue Eddy",
-  "addressLocality": "Gatineau",
-  "addressRegion": "QC",
-  "postalCode": "J8X 2X2",
-  "addressCountry": "CA"
-},
-"telephone": "+1-819-639-5598",
-"priceRange": "$$"
-}
-</script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
 body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
-
-/* LOGO FONDO */
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
@@ -63,34 +38,44 @@ text-align:center;
 position:relative;
 padding:20px;
 }
-
 .hero::after{
 content:"";
 position:absolute;
 top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.75);
 }
-
 .hero-content{position:relative;z-index:2;}
-
 .hero h1{font-size:42px;margin-bottom:10px;}
 
 .address{font-size:18px;color:#D4AF37;margin-top:10px;}
 
-/* BOTÓN MAPA */
+.language-switch{
+position:absolute;
+top:20px;
+right:20px;
+z-index:3;
+}
+.language-switch button{
+background:transparent;
+border:1px solid #D4AF37;
+color:#D4AF37;
+padding:6px 12px;
+margin-left:5px;
+border-radius:20px;
+cursor:pointer;
+font-size:12px;
+}
+
+/* MAP BUTTON */
 .map-button{
 display:inline-block;margin-top:20px;padding:14px 32px;
 border-radius:40px;text-decoration:none;font-weight:600;
 font-size:15px;background:#D4AF37;color:#000;
-transition:all 0.4s cubic-bezier(.19,1,.22,1);
-box-shadow:0 8px 25px rgba(212,175,55,0.4);
+transition:0.4s;
 }
-.map-button:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 45px rgba(212,175,55,0.5);
-}
+.map-button:hover{transform:translateY(-6px);}
 
-/* BOTONES */
+/* BUTTONS */
 .top-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:25px;}
 .top-buttons a{
 padding:12px 28px;border-radius:40px;text-decoration:none;
@@ -100,15 +85,11 @@ font-weight:600;font-size:14px;transition:0.4s;
 .btn-outline{border:1px solid #D4AF37;color:#D4AF37;background:transparent;}
 .btn-outline:hover{background:#D4AF37;color:#000;}
 
-/* ANIMACIÓN */
-.reveal{opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(.19,1,.22,1);}
-.reveal.active{opacity:1;transform:translateY(0);}
-
-/* SECCIONES */
+/* SECTIONS */
 section{padding:100px 20px;text-align:center;}
 h2{margin-bottom:50px;color:#D4AF37;font-size:32px;}
 
-/* SERVICIOS */
+/* SERVICES */
 .services{
 display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
 gap:25px;max-width:1000px;margin:auto;
@@ -117,24 +98,20 @@ gap:25px;max-width:1000px;margin:auto;
 padding:25px;border:1px solid #222;border-radius:15px;
 background:#111;transition:0.5s;
 }
-.service:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 40px rgba(212,175,55,0.2);
-}
+.service:hover{transform:translateY(-10px);}
 .price{font-size:18px;margin-top:10px;color:#D4AF37;font-weight:600;}
 
-/* GALERÍA */
+/* GALLERY */
 .gallery{
 display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 .gallery img{
 width:100%;height:260px;object-fit:cover;
-border-radius:15px;transition:0.5s;
+border-radius:15px;
 }
-.gallery img:hover{transform:scale(1.05);}
 
-/* RESEÑAS */
+/* REVIEWS */
 .reviews{max-width:900px;margin:auto;display:grid;gap:25px;}
 .review{
 background:#111;padding:25px;border-radius:15px;
@@ -142,7 +119,6 @@ border:1px solid #222;text-align:left;
 }
 .stars{color:#D4AF37;margin-bottom:10px;font-size:18px;}
 
-/* MENSAJE FINAL */
 .final-message{
 background:#000;padding:90px 20px;font-size:20px;
 color:#D4AF37;text-align:center;line-height:1.8;
@@ -154,33 +130,41 @@ footer{background:#000;padding:25px;text-align:center;color:#888;}
 
 <body>
 
+<div class="language-switch">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+</div>
+
 <section class="hero">
 <div class="hero-content">
 
 <h1>Club des Coiffeurs VIP</h1>
-<p>Salon de Coiffure – Gatineau, Québec</p>
+<p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
 
 <div class="address">
 187 Rue Eddy, Gatineau, QC J8X 2X2
 </div>
 
-<a href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2"
-target="_blank" class="map-button">
+<a id="mapText"
+href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2"
+target="_blank"
+class="map-button">
 📍 Voir l’emplacement
 </a>
 
 <div class="top-buttons">
-<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
+<a id="reserveText" href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
 <a href="https://wa.me/18196395598" class="btn-outline">WhatsApp</a>
-<a href="tel:18196395598" class="btn-outline">Appeler</a>
+<a id="callText" href="tel:18196395598" class="btn-outline">Appeler</a>
 <a href="https://www.instagram.com/vip_club_barber?igsh=MW1jaHI3dzl2YzFxYw%3D%3D&utm_source=qr" target="_blank" class="btn-outline">Instagram</a>
 </div>
 
 </div>
 </section>
 
-<section class="reveal">
-<h2>Nos Services</h2>
+<section>
+<h2 id="servicesTitle">Nos Services</h2>
 <div class="services">
 <div class="service"><h3>Marcar Contornos</h3><div class="price">$15</div></div>
 <div class="service"><h3>Corte de Pelo para Niños</h3><div class="price">$25</div></div>
@@ -192,7 +176,7 @@ target="_blank" class="map-button">
 </div>
 </section>
 
-<section class="reveal">
+<section>
 <h2>Galerie</h2>
 <div class="gallery">
 <img src="imagenes/foto1.jpg" loading="lazy">
@@ -213,7 +197,7 @@ target="_blank" class="map-button">
 </div>
 </section>
 
-<section class="reveal">
+<section>
 <h2>Avis Clients</h2>
 <div class="reviews">
 <div class="review">
@@ -229,7 +213,7 @@ target="_blank" class="map-button">
 </div>
 </section>
 
-<section class="final-message reveal">
+<section class="final-message" id="finalText">
 Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
 </section>
 
@@ -238,17 +222,35 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 </footer>
 
 <script>
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("active");
+function setLang(lang){
+if(lang==="es"){
+document.getElementById("subtitle").innerText="Barbería Premium – Gatineau, Québec";
+document.getElementById("servicesTitle").innerText="Nuestros Servicios";
+document.getElementById("reserveText").innerText="Reservar";
+document.getElementById("callText").innerText="Llamar";
+document.getElementById("mapText").innerText="📍 Ver ubicación";
+document.getElementById("finalText").innerText=
+"Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.";
 }
-});
-},{threshold:0.15});
-
-document.querySelectorAll(".reveal").forEach(el=>{
-observer.observe(el);
-});
+if(lang==="en"){
+document.getElementById("subtitle").innerText="Premium Barbershop – Gatineau, Quebec";
+document.getElementById("servicesTitle").innerText="Our Services";
+document.getElementById("reserveText").innerText="Book Now";
+document.getElementById("callText").innerText="Call";
+document.getElementById("mapText").innerText="📍 View Location";
+document.getElementById("finalText").innerText=
+"We are living proof that dreams come true with discipline, dedication and determination.";
+}
+if(lang==="fr"){
+document.getElementById("subtitle").innerText="Salon de Coiffure – Gatineau, Québec";
+document.getElementById("servicesTitle").innerText="Nos Services";
+document.getElementById("reserveText").innerText="Réserver";
+document.getElementById("callText").innerText="Appeler";
+document.getElementById("mapText").innerText="📍 Voir l’emplacement";
+document.getElementById("finalText").innerText=
+"Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination.";
+}
+}
 </script>
 
 </body>
