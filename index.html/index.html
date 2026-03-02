@@ -23,12 +23,12 @@ from{opacity:0;}
 to{opacity:1;}
 }
 
-/* LOGO MARCA DE AGUA */
+/* LOGO FONDO */
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
-background-size:700px;
-opacity:0.18;
+background-size:650px;
+opacity:0.20;
 position:fixed;
 top:0;
 left:0;
@@ -49,7 +49,7 @@ position:relative;
 .logo{
 width:140px;
 margin-bottom:25px;
-opacity:0.6;
+opacity:0.55;
 filter:grayscale(100%);
 transition:0.4s ease;
 }
@@ -57,23 +57,6 @@ transition:0.4s ease;
 .logo:hover{
 opacity:0.9;
 filter:grayscale(0%);
-}
-
-.language-switch{
-position:absolute;
-top:20px;
-right:20px;
-}
-
-.language-switch button{
-background:transparent;
-border:1px solid white;
-color:white;
-padding:5px 10px;
-margin-left:5px;
-border-radius:20px;
-cursor:pointer;
-font-size:12px;
 }
 
 .brand-message{
@@ -84,7 +67,7 @@ margin-left:auto;
 margin-right:auto;
 line-height:1.8;
 letter-spacing:1.5px;
-opacity:0.8;
+opacity:0.85;
 font-weight:400;
 text-transform:uppercase;
 }
@@ -107,14 +90,12 @@ transition:0.3s ease;
 }
 
 .btn-primary{
-background:#000;
-color:#fff;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
+background:#fff;
+color:#000;
 }
 
 .btn-primary:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 30px rgba(0,0,0,0.4);
 }
 
 .btn-outline{
@@ -131,14 +112,6 @@ background:rgba(255,255,255,0.1);
 section{
 padding:80px 20px;
 text-align:center;
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
 }
 
 h2{
@@ -162,10 +135,10 @@ text-decoration:none;
 font-weight:600;
 }
 
-/* SERVICES AGRUPADOS */
+/* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:15px;
 max-width:900px;
 margin:auto;
@@ -177,7 +150,7 @@ border:1px solid #eaeaea;
 border-radius:10px;
 background:#fff;
 transition:0.3s;
-font-size:14px;
+font-size:13px;
 }
 
 .service:hover{
@@ -186,12 +159,12 @@ box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 .service h3{
-font-size:14px;
+font-size:13px;
 margin-bottom:5px;
 }
 
 .price{
-font-size:16px;
+font-size:15px;
 font-weight:700;
 margin-top:5px;
 }
@@ -291,26 +264,23 @@ View on Google Maps
 </section>
 
 <section>
-<h2>Nos Services</h2>
-<div class="services">
-<div class="service"><h3>Marcar Contornos</h3><div class="price">$15</div></div>
-<div class="service"><h3>Corte para Niños</h3><div class="price">$25</div></div>
-<div class="service"><h3>Corte Regular</h3><div class="price">$35</div></div>
-<div class="service"><h3>Rasurado Cabeza y Barba</h3><div class="price">$40</div></div>
-<div class="service"><h3>Corte + Barba</h3><div class="price">$45</div></div>
-<div class="service vip"><h3>Corte VIP</h3><div class="price">$55</div></div>
-</div>
-</section>
-
-<section>
 <h2>Galerie</h2>
 <div class="gallery">
 <img src="imagenes/foto1.jpg">
 <img src="imagenes/foto2.jpg">
-<img src="imagenes/foto3.jpg">
+<img src="imagenes/foto3jpg.jpg">
 <img src="imagenes/foto4.jpg">
 <img src="imagenes/foto5.jpg">
 <img src="imagenes/foto6.jpg">
+<img src="imagenes/foto7.jpg">
+<img src="imagenes/foto8.jpg">
+<img src="imagenes/foto9.jpg">
+<img src="imagenes/foto10.jpg">
+<img src="imagenes/foto11.jpg">
+<img src="imagenes/foto12.jpg">
+<img src="imagenes/foto13.jpg">
+<img src="imagenes/foto14.jpg">
+<img src="imagenes/foto15.jpg">
 </div>
 </section>
 
