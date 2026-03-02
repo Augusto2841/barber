@@ -26,72 +26,77 @@ color:#111;
 background:#000;
 color:white;
 text-align:center;
-padding:50px 20px;
+padding:60px 20px;
 }
 
 .logo{
-width:150px;
-margin-bottom:20px;
-opacity:0.85;
+width:160px;
+margin-bottom:25px;
+opacity:0.9;
 }
 
 .top-header h1{
 letter-spacing:3px;
 font-weight:700;
-margin-bottom:8px;
+margin-bottom:10px;
 }
 
 .top-header p{
 opacity:0.6;
-margin-bottom:35px;
+margin-bottom:40px;
 font-size:14px;
 }
+
+/* BOTONES MÁS LLAMATIVOS */
 
 .top-buttons{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:12px;
+gap:15px;
 }
 
 .top-buttons a{
-padding:10px 22px;
-border-radius:30px;
-border:1px solid rgba(255,255,255,0.6);
-background:transparent;
-color:white;
+padding:12px 28px;
+border-radius:40px;
 text-decoration:none;
-font-weight:500;
-font-size:13px;
+font-weight:600;
+font-size:14px;
 letter-spacing:0.5px;
-transition:0.25s ease;
+transition:0.3s ease;
 }
 
-.top-buttons a:hover{
-background:rgba(255,255,255,0.08);
+/* RESERVA DESTACADO */
+.btn-primary{
+background:#ffffff;
+color:#000;
+}
+
+.btn-primary:hover{
+background:#e5e5e5;
+transform:translateY(-3px);
+}
+
+/* BOTONES SECUNDARIOS */
+.btn-outline{
+border:1px solid rgba(255,255,255,0.7);
+color:white;
+background:transparent;
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,0.1);
 border-color:white;
 }
 
-/* HERO */
+/* HERO SOLO IMAGEN */
 
 .hero{
 background:url("imagenes/foto1.jpg") center/cover no-repeat;
-height:65vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-align:center;
+height:55vh;
 }
 
-.hero h2{
-background:rgba(0,0,0,0.6);
-padding:18px 35px;
-border-radius:8px;
-font-size:28px;
-}
-
-/* SECTIONS */
+/* SECCIONES */
 
 section{
 padding:70px 20px;
@@ -103,7 +108,7 @@ margin-bottom:40px;
 font-size:28px;
 }
 
-/* SERVICES */
+/* SERVICIOS */
 
 .services{
 display:flex;
@@ -153,7 +158,7 @@ margin-bottom:10px;
 font-weight:600;
 }
 
-/* GALLERY */
+/* GALERÍA */
 
 .gallery{
 display:flex;
@@ -190,10 +195,6 @@ align-items:center;
 width:90%;
 height:auto;
 }
-
-.hero{
-height:50vh;
-}
 }
 </style>
 </head>
@@ -202,26 +203,33 @@ height:50vh;
 
 <header class="top-header">
 
-<img src="imagenes/logo.jpg" alt="Club des Coiffeurs VIP Logo" class="logo">
+<img src="logo.jpg" alt="Club des Coiffeurs VIP Logo" class="logo">
 
 <h1>Club des Coiffeurs VIP</h1>
 <p>Salon de Coiffure – Gatineau, Québec</p>
 
 <div class="top-buttons">
 
-<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" target="_top">
+<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+   target="_top"
+   class="btn-primary">
 Réserver
 </a>
 
-<a href="https://wa.me/18196395598" target="_blank">
+<a href="https://wa.me/18196395598"
+   target="_blank"
+   class="btn-outline">
 WhatsApp
 </a>
 
-<a href="tel:18196395598">
+<a href="tel:18196395598"
+   class="btn-outline">
 Appeler
 </a>
 
-<a href="https://www.instagram.com/vip_club_barber" target="_blank">
+<a href="https://www.instagram.com/vip_club_barber"
+   target="_blank"
+   class="btn-outline">
 Instagram
 </a>
 
@@ -229,9 +237,7 @@ Instagram
 
 </header>
 
-<div class="hero">
-<h2>Style. Élégance. Excellence.</h2>
-</div>
+<div class="hero"></div>
 
 <section>
 <h2>Nos Services</h2>
