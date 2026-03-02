@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club des Coiffeurs VIP</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -20,21 +20,63 @@ background:#ffffff;
 color:#111;
 }
 
-header{
+/* HEADER */
+
+.top-header{
 background:#000;
 color:white;
 text-align:center;
-padding:25px;
+padding:50px 20px;
 }
 
-header h1{
-letter-spacing:2px;
-font-weight:700;
+.logo{
+width:150px;
+margin-bottom:20px;
+opacity:0.85;
 }
+
+.top-header h1{
+letter-spacing:3px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.top-header p{
+opacity:0.6;
+margin-bottom:35px;
+font-size:14px;
+}
+
+.top-buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.top-buttons a{
+padding:10px 22px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.6);
+background:transparent;
+color:white;
+text-decoration:none;
+font-weight:500;
+font-size:13px;
+letter-spacing:0.5px;
+transition:0.25s ease;
+}
+
+.top-buttons a:hover{
+background:rgba(255,255,255,0.08);
+border-color:white;
+}
+
+/* HERO */
 
 .hero{
 background:url("imagenes/foto1.jpg") center/cover no-repeat;
-height:75vh;
+height:65vh;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -43,11 +85,13 @@ text-align:center;
 }
 
 .hero h2{
-background:rgba(0,0,0,0.65);
-padding:20px 40px;
+background:rgba(0,0,0,0.6);
+padding:18px 35px;
 border-radius:8px;
-font-size:34px;
+font-size:28px;
 }
+
+/* SECTIONS */
 
 section{
 padding:70px 20px;
@@ -56,7 +100,7 @@ text-align:center;
 
 h2{
 margin-bottom:40px;
-font-size:30px;
+font-size:28px;
 }
 
 /* SERVICES */
@@ -78,12 +122,12 @@ background:#fff;
 }
 
 .service:hover{
-box-shadow:0 15px 30px rgba(0,0,0,0.1);
-transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(0,0,0,0.08);
+transform:translateY(-4px);
 }
 
 .price{
-font-size:22px;
+font-size:20px;
 font-weight:700;
 margin-top:15px;
 }
@@ -92,7 +136,6 @@ margin-top:15px;
 border:2px solid #000;
 background:#000;
 color:white;
-transform:scale(1.05);
 }
 
 .vip .price{
@@ -102,7 +145,7 @@ color:#FFD700;
 .badge{
 background:#FFD700;
 color:#000;
-padding:5px 10px;
+padding:4px 10px;
 font-size:12px;
 border-radius:20px;
 display:inline-block;
@@ -120,37 +163,11 @@ gap:15px;
 }
 
 .gallery img{
-width:280px;
-height:280px;
+width:260px;
+height:260px;
 object-fit:cover;
 border-radius:10px;
 }
-
-/* BOOKING */
-
-.booking{
-background:#f5f5f5;
-}
-
-.button{
-display:inline-block;
-margin:10px;
-padding:14px 28px;
-border-radius:30px;
-text-decoration:none;
-font-weight:600;
-color:white;
-transition:0.3s;
-}
-
-.button:hover{
-opacity:0.85;
-}
-
-.btn-blue{ background:#006aff; }
-.btn-green{ background:#25D366; }
-.btn-black{ background:#000; }
-.btn-purple{ background:#C13584; }
 
 /* FOOTER */
 
@@ -160,6 +177,7 @@ color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
+font-size:14px;
 }
 
 @media(max-width:768px){
@@ -173,8 +191,8 @@ width:90%;
 height:auto;
 }
 
-.hero h2{
-font-size:24px;
+.hero{
+height:50vh;
 }
 }
 </style>
@@ -182,9 +200,33 @@ font-size:24px;
 
 <body>
 
-<header>
+<header class="top-header">
+
+<img src="imagenes/logo.jpg" alt="Club des Coiffeurs VIP Logo" class="logo">
+
 <h1>Club des Coiffeurs VIP</h1>
 <p>Salon de Coiffure – Gatineau, Québec</p>
+
+<div class="top-buttons">
+
+<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" target="_top">
+Réserver
+</a>
+
+<a href="https://wa.me/18196395598" target="_blank">
+WhatsApp
+</a>
+
+<a href="tel:18196395598">
+Appeler
+</a>
+
+<a href="https://www.instagram.com/vip_club_barber" target="_blank">
+Instagram
+</a>
+
+</div>
+
 </header>
 
 <div class="hero">
@@ -198,38 +240,32 @@ font-size:24px;
 
 <div class="service">
 <h3>Marcar Contornos</h3>
-<p>Definición y precisión profesional.</p>
 <div class="price">$15</div>
 </div>
 
 <div class="service">
 <h3>Corte para Niños</h3>
-<p>Estilo moderno y cómodo.</p>
 <div class="price">$25</div>
 </div>
 
 <div class="service">
 <h3>Corte Regular</h3>
-<p>Corte clásico profesional.</p>
 <div class="price">$35</div>
 </div>
 
 <div class="service">
 <h3>Rasurado Cabeza y Barba</h3>
-<p>Afeitado completo con acabado limpio.</p>
 <div class="price">$40</div>
 </div>
 
 <div class="service">
 <h3>Corte + Barba</h3>
-<p>Servicio completo y detallado.</p>
 <div class="price">$45</div>
 </div>
 
 <div class="service vip">
-<div class="badge">⭐ MÁS EXCLUSIVO</div>
+<div class="badge">VIP</div>
 <h3>Corte VIP</h3>
-<p>Experiencia premium con atención personalizada.</p>
 <div class="price">$55</div>
 </div>
 
@@ -249,42 +285,6 @@ font-size:24px;
 <img src="imagenes/foto7.jpg">
 
 </div>
-</section>
-
-<section class="booking">
-<h2>Réservez votre rendez-vous</h2>
-<p>Contactez-nous ou réservez en ligne</p>
-
-<a class="button btn-blue"
-href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
-target="_top"
-rel="nofollow">
-Réserver Maintenant
-</a>
-
-<a class="button btn-green"
-href="https://wa.me/18196395598"
-target="_blank">
-WhatsApp
-</a>
-
-<a class="button btn-black"
-href="tel:18196395598">
-Appeler
-</a>
-
-<a class="button btn-purple"
-href="https://www.instagram.com/vip_club_barber"
-target="_blank">
-Instagram
-</a>
-
-</section>
-
-<section>
-<h2>Contact</h2>
-<p>📍 Gatineau, Québec, Canada</p>
-<p>📞 819-639-5598</p>
 </section>
 
 <footer>
