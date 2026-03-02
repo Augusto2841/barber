@@ -9,14 +9,26 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#ffffff;color:#111;position:relative;overflow-x:hidden;}
+
+body{
+background:linear-gradient(135deg,#f9f9f9,#ececec);
+color:#111;
+position:relative;
+overflow-x:hidden;
+animation:fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
 
 /* LOGO MARCA DE AGUA */
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
-background-size:600px;
-opacity:0.1;
+background-size:700px;
+opacity:0.18;
 position:fixed;
 top:0;
 left:0;
@@ -27,38 +39,98 @@ z-index:-1;
 
 /* HEADER */
 .top-header{
-background:#000;color:white;text-align:center;
-padding:60px 20px;position:relative;
+background:#000;
+color:white;
+text-align:center;
+padding:60px 20px;
+position:relative;
 }
 
-.logo{width:160px;margin-bottom:25px;opacity:0.85;}
+.logo{
+width:140px;
+margin-bottom:25px;
+opacity:0.6;
+filter:grayscale(100%);
+transition:0.4s ease;
+}
 
-.language-switch{position:absolute;top:20px;right:20px;}
+.logo:hover{
+opacity:0.9;
+filter:grayscale(0%);
+}
+
+.language-switch{
+position:absolute;
+top:20px;
+right:20px;
+}
+
 .language-switch button{
-background:transparent;border:1px solid white;color:white;
-padding:5px 10px;margin-left:5px;border-radius:20px;
-cursor:pointer;font-size:12px;
+background:transparent;
+border:1px solid white;
+color:white;
+padding:5px 10px;
+margin-left:5px;
+border-radius:20px;
+cursor:pointer;
+font-size:12px;
+}
+
+.brand-message{
+margin-top:25px;
+font-size:14px;
+max-width:750px;
+margin-left:auto;
+margin-right:auto;
+line-height:1.8;
+letter-spacing:1.5px;
+opacity:0.8;
+font-weight:400;
+text-transform:uppercase;
 }
 
 .top-buttons{
-display:flex;justify-content:center;flex-wrap:wrap;
-gap:15px;margin-top:30px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:15px;
+margin-top:30px;
 }
 
 .top-buttons a{
-padding:12px 28px;border-radius:40px;
-text-decoration:none;font-weight:600;font-size:14px;
+padding:12px 28px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
 transition:0.3s ease;
 }
 
-.btn-primary{background:#ffffff;color:#000;}
-.btn-primary:hover{transform:translateY(-3px);}
-.btn-outline{border:1px solid rgba(255,255,255,0.7);color:white;background:transparent;}
-.btn-outline:hover{background:rgba(255,255,255,0.1);}
+.btn-primary{
+background:#000;
+color:#fff;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(0,0,0,0.4);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,0.7);
+color:white;
+background:transparent;
+}
+
+.btn-outline:hover{
+background:rgba(255,255,255,0.1);
+}
 
 /* SECTIONS */
 section{
-padding:80px 20px;text-align:center;
+padding:80px 20px;
+text-align:center;
 opacity:0;
 transform:translateY(40px);
 transition:all 0.8s ease;
@@ -69,39 +141,70 @@ opacity:1;
 transform:translateY(0);
 }
 
-h2{margin-bottom:40px;font-size:28px;}
-
-/* ADDRESS */
-.address{background:#f5f5f5;}
-
-.map-btn{
-display:inline-block;margin-top:15px;
-padding:12px 26px;border-radius:30px;
-background:#000;color:white;
-text-decoration:none;font-weight:600;
+h2{
+margin-bottom:40px;
+font-size:28px;
 }
 
-/* SERVICES */
+/* ADDRESS */
+.address{
+background:#f5f5f5;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:15px;
+padding:12px 26px;
+border-radius:30px;
+background:#000;
+color:white;
+text-decoration:none;
+font-weight:600;
+}
+
+/* SERVICES AGRUPADOS */
 .services{
-display:flex;flex-wrap:wrap;
-justify-content:center;gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
 }
 
 .service{
-width:260px;padding:25px;
+padding:15px;
 border:1px solid #eaeaea;
-border-radius:12px;background:#fff;
-transition:0.4s;
+border-radius:10px;
+background:#fff;
+transition:0.3s;
+font-size:14px;
 }
 
 .service:hover{
-transform:translateY(-8px);
-box-shadow:0 15px 35px rgba(0,0,0,0.1);
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
-.price{font-size:20px;font-weight:700;margin-top:15px;}
-.vip{border:2px solid #000;background:#000;color:white;}
-.vip .price{color:#FFD700;}
+.service h3{
+font-size:14px;
+margin-bottom:5px;
+}
+
+.price{
+font-size:16px;
+font-weight:700;
+margin-top:5px;
+}
+
+.vip{
+border:1px solid #000;
+background:#000;
+color:white;
+}
+
+.vip .price{
+color:#FFD700;
+}
 
 /* GALLERY */
 .gallery{
@@ -111,9 +214,12 @@ gap:15px;
 }
 
 .gallery img{
-width:100%;height:250px;
-object-fit:cover;border-radius:10px;
-cursor:pointer;transition:0.4s ease;
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:0.4s ease;
 }
 
 .gallery img:hover{
@@ -122,27 +228,34 @@ transform:scale(1.05);
 
 /* LIGHTBOX */
 .lightbox{
-display:none;position:fixed;
-top:0;left:0;width:100%;height:100%;
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.9);
-justify-content:center;align-items:center;
+justify-content:center;
+align-items:center;
 z-index:1000;
 }
 
 .lightbox img{
-max-width:90%;max-height:80%;
+max-width:90%;
+max-height:80%;
 border-radius:10px;
 }
 
-.lightbox.active{display:flex;}
-
-footer{
-background:#000;color:white;
-text-align:center;padding:20px;margin-top:40px;
+.lightbox.active{
+display:flex;
 }
 
-@media(max-width:768px){
-.services{flex-direction:column;align-items:center;}
+footer{
+background:#000;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
 }
 </style>
 </head>
@@ -151,37 +264,34 @@ text-align:center;padding:20px;margin-top:40px;
 
 <header class="top-header">
 
-<div class="language-switch">
-<button onclick="setLanguage('fr')">FR</button>
-<button onclick="setLanguage('en')">EN</button>
-<button onclick="setLanguage('es')">ES</button>
-</div>
-
 <img src="logo.jpg" class="logo">
 
 <h1>Club des Coiffeurs VIP</h1>
-<p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
+<p>Salon de Coiffure – Gatineau, Québec</p>
+
+<p class="brand-message">
+Somos el reflejo de que el éxito se construye con disciplina, dedicación y una voluntad inquebrantable.
+</p>
 
 <div class="top-buttons">
-<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" target="_top" class="btn-primary" id="btnReserve">Réserver</a>
+<a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" target="_top" class="btn-primary">Réserver</a>
 <a href="https://wa.me/18196395598" target="_blank" class="btn-outline">WhatsApp</a>
-<a href="tel:18196395598" class="btn-outline" id="btnCall">Appeler</a>
+<a href="tel:18196395598" class="btn-outline">Appeler</a>
 <a href="https://www.instagram.com/vip_club_barber" target="_blank" class="btn-outline">Instagram</a>
 </div>
 
 </header>
 
-<section class="address reveal">
-<h2 id="locationTitle">Location</h2>
+<section class="address">
+<h2>Location</h2>
 <p>187 Rue Eddy, Gatineau, QC J8X 2X2</p>
-<a href="https://maps.app.goo.gl/JuSRuyYkVgwc7JQj6" target="_blank" class="map-btn" id="mapButton">
+<a href="https://maps.app.goo.gl/JuSRuyYkVgwc7JQj6" target="_blank" class="map-btn">
 View on Google Maps
 </a>
 </section>
 
-<section class="reveal">
-<h2 id="servicesTitle">Nos Services</h2>
-
+<section>
+<h2>Nos Services</h2>
 <div class="services">
 <div class="service"><h3>Marcar Contornos</h3><div class="price">$15</div></div>
 <div class="service"><h3>Corte para Niños</h3><div class="price">$25</div></div>
@@ -192,25 +302,15 @@ View on Google Maps
 </div>
 </section>
 
-<section class="reveal">
-<h2 id="galleryTitle">Galerie</h2>
-
+<section>
+<h2>Galerie</h2>
 <div class="gallery">
 <img src="imagenes/foto1.jpg">
 <img src="imagenes/foto2.jpg">
-<img src="imagenes/foto3jpg.jpg">
+<img src="imagenes/foto3.jpg">
 <img src="imagenes/foto4.jpg">
 <img src="imagenes/foto5.jpg">
 <img src="imagenes/foto6.jpg">
-<img src="imagenes/foto7.jpg">
-<img src="imagenes/foto8.jpg">
-<img src="imagenes/foto9.jpg">
-<img src="imagenes/foto10.jpg">
-<img src="imagenes/foto11.jpg">
-<img src="imagenes/foto12.jpg">
-<img src="imagenes/foto13.jpg">
-<img src="imagenes/foto14.jpg">
-<img src="imagenes/foto15.jpg">
 </div>
 </section>
 
@@ -223,19 +323,6 @@ View on Google Maps
 </footer>
 
 <script>
-/* SCROLL ANIMATION */
-const sections=document.querySelectorAll("section");
-
-window.addEventListener("scroll",()=>{
-sections.forEach(sec=>{
-const top=sec.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-sec.classList.add("show");
-}
-});
-});
-
-/* LIGHTBOX */
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=lightbox.querySelector("img");
 
