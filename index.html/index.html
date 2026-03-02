@@ -26,7 +26,11 @@ z-index:-1;
 }
 
 /* HEADER */
-.top-header{background:#000;color:white;text-align:center;padding:60px 20px;position:relative;}
+.top-header{
+background:#000;color:white;text-align:center;
+padding:60px 20px;position:relative;
+}
+
 .logo{width:160px;margin-bottom:25px;opacity:0.85;}
 
 .language-switch{position:absolute;top:20px;right:20px;}
@@ -36,10 +40,15 @@ padding:5px 10px;margin-left:5px;border-radius:20px;
 cursor:pointer;font-size:12px;
 }
 
-.top-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:30px;}
+.top-buttons{
+display:flex;justify-content:center;flex-wrap:wrap;
+gap:15px;margin-top:30px;
+}
+
 .top-buttons a{
-padding:12px 28px;border-radius:40px;text-decoration:none;
-font-weight:600;font-size:14px;transition:0.3s ease;
+padding:12px 28px;border-radius:40px;
+text-decoration:none;font-weight:600;font-size:14px;
+transition:0.3s ease;
 }
 
 .btn-primary{background:#ffffff;color:#000;}
@@ -48,29 +57,53 @@ font-weight:600;font-size:14px;transition:0.3s ease;
 .btn-outline:hover{background:rgba(255,255,255,0.1);}
 
 /* SECTIONS */
-section{padding:70px 20px;text-align:center;}
+section{
+padding:80px 20px;text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
 h2{margin-bottom:40px;font-size:28px;}
 
 /* ADDRESS */
 .address{background:#f5f5f5;}
+
 .map-btn{
-display:inline-block;margin-top:15px;padding:12px 26px;
-border-radius:30px;background:#000;color:white;
+display:inline-block;margin-top:15px;
+padding:12px 26px;border-radius:30px;
+background:#000;color:white;
 text-decoration:none;font-weight:600;
 }
 
 /* SERVICES */
-.services{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
-.service{
-width:260px;padding:25px;border:1px solid #eaeaea;
-border-radius:12px;background:#fff;transition:0.3s;
+.services{
+display:flex;flex-wrap:wrap;
+justify-content:center;gap:30px;
 }
-.service:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+
+.service{
+width:260px;padding:25px;
+border:1px solid #eaeaea;
+border-radius:12px;background:#fff;
+transition:0.4s;
+}
+
+.service:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
 .price{font-size:20px;font-weight:700;margin-top:15px;}
 .vip{border:2px solid #000;background:#000;color:white;}
 .vip .price{color:#FFD700;}
 
-/* GALLERY MODERNA */
+/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -78,12 +111,9 @@ gap:15px;
 }
 
 .gallery img{
-width:100%;
-height:250px;
-object-fit:cover;
-border-radius:10px;
-cursor:pointer;
-transition:0.4s ease;
+width:100%;height:250px;
+object-fit:cover;border-radius:10px;
+cursor:pointer;transition:0.4s ease;
 }
 
 .gallery img:hover{
@@ -92,27 +122,23 @@ transform:scale(1.05);
 
 /* LIGHTBOX */
 .lightbox{
-display:none;
-position:fixed;
-top:0;left:0;
-width:100%;height:100%;
+display:none;position:fixed;
+top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
+justify-content:center;align-items:center;
 z-index:1000;
 }
 
 .lightbox img{
-max-width:90%;
-max-height:80%;
+max-width:90%;max-height:80%;
 border-radius:10px;
 }
 
 .lightbox.active{display:flex;}
 
 footer{
-background:#000;color:white;text-align:center;
-padding:20px;margin-top:40px;
+background:#000;color:white;
+text-align:center;padding:20px;margin-top:40px;
 }
 
 @media(max-width:768px){
@@ -145,7 +171,7 @@ padding:20px;margin-top:40px;
 
 </header>
 
-<section class="address">
+<section class="address reveal">
 <h2 id="locationTitle">Location</h2>
 <p>187 Rue Eddy, Gatineau, QC J8X 2X2</p>
 <a href="https://maps.app.goo.gl/JuSRuyYkVgwc7JQj6" target="_blank" class="map-btn" id="mapButton">
@@ -153,20 +179,20 @@ View on Google Maps
 </a>
 </section>
 
-<section>
+<section class="reveal">
 <h2 id="servicesTitle">Nos Services</h2>
 
 <div class="services">
-<div class="service"><h3 id="s1">Marcar Contornos</h3><div class="price">$15</div></div>
-<div class="service"><h3 id="s2">Corte para Niños</h3><div class="price">$25</div></div>
-<div class="service"><h3 id="s3">Corte Regular</h3><div class="price">$35</div></div>
-<div class="service"><h3 id="s4">Rasurado Cabeza y Barba</h3><div class="price">$40</div></div>
-<div class="service"><h3 id="s5">Corte + Barba</h3><div class="price">$45</div></div>
-<div class="service vip"><h3 id="s6">Corte VIP</h3><div class="price">$55</div></div>
+<div class="service"><h3>Marcar Contornos</h3><div class="price">$15</div></div>
+<div class="service"><h3>Corte para Niños</h3><div class="price">$25</div></div>
+<div class="service"><h3>Corte Regular</h3><div class="price">$35</div></div>
+<div class="service"><h3>Rasurado Cabeza y Barba</h3><div class="price">$40</div></div>
+<div class="service"><h3>Corte + Barba</h3><div class="price">$45</div></div>
+<div class="service vip"><h3>Corte VIP</h3><div class="price">$55</div></div>
 </div>
 </section>
 
-<section>
+<section class="reveal">
 <h2 id="galleryTitle">Galerie</h2>
 
 <div class="gallery">
@@ -197,6 +223,19 @@ View on Google Maps
 </footer>
 
 <script>
+/* SCROLL ANIMATION */
+const sections=document.querySelectorAll("section");
+
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+/* LIGHTBOX */
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=lightbox.querySelector("img");
 
@@ -210,40 +249,6 @@ lightboxImg.src=img.src;
 lightbox.addEventListener("click",()=>{
 lightbox.classList.remove("active");
 });
-
-/* IDIOMAS */
-function setLanguage(lang){
-
-if(lang==="fr"){
-document.getElementById("subtitle").innerText="Salon de Coiffure – Gatineau, Québec";
-document.getElementById("servicesTitle").innerText="Nos Services";
-document.getElementById("galleryTitle").innerText="Galerie";
-document.getElementById("btnReserve").innerText="Réserver";
-document.getElementById("btnCall").innerText="Appeler";
-document.getElementById("locationTitle").innerText="Localisation";
-document.getElementById("mapButton").innerText="Voir sur Google Maps";
-}
-
-if(lang==="en"){
-document.getElementById("subtitle").innerText="Hair Salon – Gatineau, Quebec";
-document.getElementById("servicesTitle").innerText="Our Services";
-document.getElementById("galleryTitle").innerText="Gallery";
-document.getElementById("btnReserve").innerText="Book Now";
-document.getElementById("btnCall").innerText="Call";
-document.getElementById("locationTitle").innerText="Location";
-document.getElementById("mapButton").innerText="View on Google Maps";
-}
-
-if(lang==="es"){
-document.getElementById("subtitle").innerText="Salón de Barbería – Gatineau, Quebec";
-document.getElementById("servicesTitle").innerText="Nuestros Servicios";
-document.getElementById("galleryTitle").innerText="Galería";
-document.getElementById("btnReserve").innerText="Reservar";
-document.getElementById("btnCall").innerText="Llamar";
-document.getElementById("locationTitle").innerText="Ubicación";
-document.getElementById("mapButton").innerText="Ver en Google Maps";
-}
-}
 </script>
 
 </body>
