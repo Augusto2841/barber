@@ -3,34 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club des Coiffeurs VIP</title>
+<title>Club des Coiffeurs VIP | Barbería en Gatineau QC</title>
+
+<meta name="description" content="Club des Coiffeurs VIP es una barbería premium en Gatineau, Québec. Ofrecemos cortes modernos, rasurado, barba y servicios VIP con atención profesional.">
+<meta name="keywords" content="barbería en Gatineau, salon de coiffure Gatineau, barbershop Gatineau, corte de pelo Gatineau, rasurado Gatineau, Club des Coiffeurs VIP">
+<meta name="author" content="Club des Coiffeurs VIP">
+<meta name="theme-color" content="#0a0a0a">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Barbershop",
+"name": "Club des Coiffeurs VIP",
+"image": "logo.jpg",
+"address": {
+  "@type": "PostalAddress",
+  "streetAddress": "187 Rue Eddy",
+  "addressLocality": "Gatineau",
+  "addressRegion": "QC",
+  "postalCode": "J8X 2X2",
+  "addressCountry": "CA"
+},
+"telephone": "+1-819-639-5598",
+"priceRange": "$$"
+}
+</script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-background:#0a0a0a;
-color:#fff;
-overflow-x:hidden;
-}
+body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
 
-/* LOGO FONDO GENERAL MÁS VISIBLE */
+/* LOGO FONDO */
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
-background-size:650px;
-opacity:0.15;
+background-size:700px;
+opacity:0.18;
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
+top:0;left:0;width:100%;height:100%;z-index:-1;
 }
 
-/* HERO PORTADA COMPLETA */
+/* HERO */
 .hero{
 height:100vh;
 background:url("logo.jpg") no-repeat center;
@@ -41,192 +60,114 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
 padding:20px;
 }
 
-/* Oscurecer un poco para efecto lujo */
 .hero::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-z-index:0;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.75);
 }
 
-.hero-content{
-position:relative;
-z-index:1;
-}
+.hero-content{position:relative;z-index:2;}
 
-/* ANIMACIÓN TIPO APPLE */
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s cubic-bezier(.19,1,.22,1);
-}
+.hero h1{font-size:42px;margin-bottom:10px;}
 
-.reveal.active{
-opacity:1;
-transform:translateY(0);
+.address{font-size:18px;color:#D4AF37;margin-top:10px;}
+
+/* BOTÓN MAPA */
+.map-button{
+display:inline-block;margin-top:20px;padding:14px 32px;
+border-radius:40px;text-decoration:none;font-weight:600;
+font-size:15px;background:#D4AF37;color:#000;
+transition:all 0.4s cubic-bezier(.19,1,.22,1);
+box-shadow:0 8px 25px rgba(212,175,55,0.4);
+}
+.map-button:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(212,175,55,0.5);
 }
 
 /* BOTONES */
-.top-buttons{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:15px;
-margin-top:30px;
-}
-
+.top-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:25px;}
 .top-buttons a{
-padding:12px 28px;
-border-radius:40px;
-text-decoration:none;
-font-weight:600;
-font-size:14px;
-transition:0.4s;
+padding:12px 28px;border-radius:40px;text-decoration:none;
+font-weight:600;font-size:14px;transition:0.4s;
 }
+.btn-primary{background:#D4AF37;color:#000;}
+.btn-outline{border:1px solid #D4AF37;color:#D4AF37;background:transparent;}
+.btn-outline:hover{background:#D4AF37;color:#000;}
 
-.btn-primary{
-background:#D4AF37;
-color:#000;
-}
+/* ANIMACIÓN */
+.reveal{opacity:0;transform:translateY(40px);transition:all 1s cubic-bezier(.19,1,.22,1);}
+.reveal.active{opacity:1;transform:translateY(0);}
 
-.btn-outline{
-border:1px solid #D4AF37;
-color:#D4AF37;
-background:transparent;
-}
+/* SECCIONES */
+section{padding:100px 20px;text-align:center;}
+h2{margin-bottom:50px;color:#D4AF37;font-size:32px;}
 
-.btn-outline:hover{
-background:#D4AF37;
-color:#000;
-}
-
-/* SECTIONS */
-section{
-padding:100px 20px;
-text-align:center;
-}
-
-h2{
-margin-bottom:50px;
-color:#D4AF37;
-font-size:32px;
-}
-
-/* ADDRESS */
-.address{
-font-size:18px;
-margin-top:15px;
-color:#D4AF37;
-}
-
-/* SERVICES */
+/* SERVICIOS */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:25px;
-max-width:1000px;
-margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:25px;max-width:1000px;margin:auto;
 }
-
 .service{
-padding:25px;
-border:1px solid #222;
-border-radius:15px;
-background:#111;
-transition:0.5s;
+padding:25px;border:1px solid #222;border-radius:15px;
+background:#111;transition:0.5s;
 }
-
 .service:hover{
 transform:translateY(-10px);
 box-shadow:0 15px 40px rgba(212,175,55,0.2);
 }
+.price{font-size:18px;margin-top:10px;color:#D4AF37;font-weight:600;}
 
-.price{
-font-size:18px;
-margin-top:10px;
-color:#D4AF37;
-font-weight:600;
-}
-
-/* GALLERY */
+/* GALERÍA */
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
-
 .gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:15px;
-transition:0.5s;
+width:100%;height:260px;object-fit:cover;
+border-radius:15px;transition:0.5s;
 }
-
-.gallery img:hover{
-transform:scale(1.05);
-}
+.gallery img:hover{transform:scale(1.05);}
 
 /* RESEÑAS */
-.reviews{
-max-width:900px;
-margin:auto;
-display:grid;
-gap:25px;
-}
-
+.reviews{max-width:900px;margin:auto;display:grid;gap:25px;}
 .review{
-background:#111;
-padding:25px;
-border-radius:15px;
-border:1px solid #222;
-text-align:left;
+background:#111;padding:25px;border-radius:15px;
+border:1px solid #222;text-align:left;
 }
-
-.stars{
-color:#D4AF37;
-margin-bottom:10px;
-font-size:18px;
-}
+.stars{color:#D4AF37;margin-bottom:10px;font-size:18px;}
 
 /* MENSAJE FINAL */
 .final-message{
-background:#000;
-padding:80px 20px;
-font-size:18px;
-color:#D4AF37;
-text-align:center;
-line-height:1.8;
+background:#000;padding:90px 20px;font-size:20px;
+color:#D4AF37;text-align:center;line-height:1.8;
 }
 
-/* FOOTER */
-footer{
-background:#000;
-padding:25px;
-text-align:center;
-color:#888;
-}
+footer{background:#000;padding:25px;text-align:center;color:#888;}
 </style>
 </head>
 
 <body>
 
-<!-- HERO PORTADA COMPLETA -->
 <section class="hero">
 <div class="hero-content">
+
 <h1>Club des Coiffeurs VIP</h1>
 <p>Salon de Coiffure – Gatineau, Québec</p>
 
 <div class="address">
 187 Rue Eddy, Gatineau, QC J8X 2X2
 </div>
+
+<a href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2"
+target="_blank" class="map-button">
+📍 Voir l’emplacement
+</a>
 
 <div class="top-buttons">
 <a href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
@@ -254,21 +195,21 @@ color:#888;
 <section class="reveal">
 <h2>Galerie</h2>
 <div class="gallery">
-<img src="imagenes/foto1.jpg">
-<img src="imagenes/foto2.jpg">
-<img src="imagenes/foto3jpg.jpg">
-<img src="imagenes/foto4.jpg">
-<img src="imagenes/foto5.jpg">
-<img src="imagenes/foto6.jpg">
-<img src="imagenes/foto7.jpg">
-<img src="imagenes/foto8.jpg">
-<img src="imagenes/foto9.jpg">
-<img src="imagenes/foto10.jpg">
-<img src="imagenes/foto11.jpg">
-<img src="imagenes/foto12.jpg">
-<img src="imagenes/foto13.jpg">
-<img src="imagenes/foto14.jpg">
-<img src="imagenes/foto15.jpg">
+<img src="imagenes/foto1.jpg" loading="lazy">
+<img src="imagenes/foto2.jpg" loading="lazy">
+<img src="imagenes/foto3jpg.jpg" loading="lazy">
+<img src="imagenes/foto4.jpg" loading="lazy">
+<img src="imagenes/foto5.jpg" loading="lazy">
+<img src="imagenes/foto6.jpg" loading="lazy">
+<img src="imagenes/foto7.jpg" loading="lazy">
+<img src="imagenes/foto8.jpg" loading="lazy">
+<img src="imagenes/foto9.jpg" loading="lazy">
+<img src="imagenes/foto10.jpg" loading="lazy">
+<img src="imagenes/foto11.jpg" loading="lazy">
+<img src="imagenes/foto12.jpg" loading="lazy">
+<img src="imagenes/foto13.jpg" loading="lazy">
+<img src="imagenes/foto14.jpg" loading="lazy">
+<img src="imagenes/foto15.jpg" loading="lazy">
 </div>
 </section>
 
@@ -297,14 +238,16 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 </footer>
 
 <script>
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
-reveals.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-el.classList.add("active");
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("active");
 }
 });
+},{threshold:0.15});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+observer.observe(el);
 });
 </script>
 
