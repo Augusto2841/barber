@@ -103,8 +103,27 @@ gap:20px;
 }
 .gallery img{
 width:100%;height:260px;object-fit:cover;
+border-radius:15px;cursor:pointer;
+transition:0.4s;
+}
+.gallery img:hover{transform:scale(1.05);}
+
+/* LIGHTBOX */
+.lightbox{
+display:none;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+.lightbox img{
+max-width:90%;
+max-height:80%;
 border-radius:15px;
 }
+.lightbox.active{display:flex;}
 
 .reviews{max-width:900px;margin:auto;display:grid;gap:25px;}
 .review{
@@ -132,20 +151,14 @@ footer{background:#000;padding:25px;text-align:center;color:#888;}
 
 <section class="hero">
 <div class="hero-content">
-
 <h1>Club des Coiffeurs VIP</h1>
 <p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
-
-<div class="address">
-187 Rue Eddy, Gatineau, QC J8X 2X2
-</div>
+<div class="address">187 Rue Eddy, Gatineau, QC J8X 2X2</div>
 
 <a id="mapText"
 href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2"
 target="_blank"
-class="map-button">
-📍 Voir l’emplacement
-</a>
+class="map-button">📍 Voir l’emplacement</a>
 
 <div class="top-buttons">
 <a id="reserveText" href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
@@ -153,14 +166,12 @@ class="map-button">
 <a id="callText" href="tel:18196395598" class="btn-outline">Appeler</a>
 <a href="https://www.instagram.com/vip_club_barber?igsh=MW1jaHI3dzl2YzFxYw%3D%3D&utm_source=qr" target="_blank" class="btn-outline">Instagram</a>
 </div>
-
 </div>
 </section>
 
 <section>
 <h2 id="servicesTitle">Nos Services</h2>
 <div class="services">
-
 <div class="service"><h3 id="s1">Marcar Contornos</h3><div class="price">$15</div></div>
 <div class="service"><h3 id="s2">Corte de Pelo para Niños</h3><div class="price">$25</div></div>
 <div class="service"><h3 id="s3">Corte Regular</h3><div class="price">$35</div></div>
@@ -168,7 +179,6 @@ class="map-button">
 <div class="service"><h3 id="s5">Rasurado + Barba</h3><div class="price">$40</div></div>
 <div class="service"><h3 id="s6">Corte + Barba</h3><div class="price">$45</div></div>
 <div class="service"><h3 id="s7">Corte VIP</h3><div class="price">$55</div></div>
-
 </div>
 </section>
 
@@ -193,33 +203,34 @@ class="map-button">
 </div>
 </section>
 
-<section>
-<h2>Avis Clients</h2>
-<div class="reviews">
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>Excelente servicio y atención. La mejor barbería en Gatineau.</p>
-<strong>- Carlos M.</strong>
+<div class="lightbox" id="lightbox">
+<img src="">
 </div>
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>Profesionalismo y calidad en cada corte. Totalmente recomendado.</p>
-<strong>- Michael D.</strong>
-</div>
-</div>
-</section>
 
 <section class="final-message" id="finalText">
 Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
 </section>
 
-<footer>
-© 2026 Club des Coiffeurs VIP
-</footer>
+<footer>© 2026 Club des Coiffeurs VIP</footer>
 
 <script>
-function setLang(lang){
+/* LIGHTBOX */
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=lightbox.querySelector("img");
 
+document.querySelectorAll(".gallery img").forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.classList.add("active");
+lightboxImg.src=img.src;
+});
+});
+
+lightbox.addEventListener("click",()=>{
+lightbox.classList.remove("active");
+});
+
+/* IDIOMAS + AUTO DETECCIÓN */
+function setLang(lang){
 if(lang==="es"){
 subtitle.innerText="Barbería Premium – Gatineau, Québec";
 servicesTitle.innerText="Nuestros Servicios";
@@ -227,16 +238,7 @@ reserveText.innerText="Reservar";
 callText.innerText="Llamar";
 mapText.innerText="📍 Ver ubicación";
 finalText.innerText="Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.";
-
-s1.innerText="Marcar Contornos";
-s2.innerText="Corte de Pelo para Niños";
-s3.innerText="Corte Regular";
-s4.innerText="Rasurado";
-s5.innerText="Rasurado + Barba";
-s6.innerText="Corte + Barba";
-s7.innerText="Corte VIP";
 }
-
 if(lang==="en"){
 subtitle.innerText="Premium Barbershop – Gatineau, Quebec";
 servicesTitle.innerText="Our Services";
@@ -244,16 +246,7 @@ reserveText.innerText="Book Now";
 callText.innerText="Call";
 mapText.innerText="📍 View Location";
 finalText.innerText="We are living proof that dreams come true with discipline, dedication and determination.";
-
-s1.innerText="Line Up";
-s2.innerText="Kids Haircut";
-s3.innerText="Regular Haircut";
-s4.innerText="Shave";
-s5.innerText="Shave + Beard";
-s6.innerText="Haircut + Beard";
-s7.innerText="VIP Haircut";
 }
-
 if(lang==="fr"){
 subtitle.innerText="Salon de Coiffure – Gatineau, Québec";
 servicesTitle.innerText="Nos Services";
@@ -261,24 +254,14 @@ reserveText.innerText="Réserver";
 callText.innerText="Appeler";
 mapText.innerText="📍 Voir l’emplacement";
 finalText.innerText="Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination.";
-
-s1.innerText="Contours";
-s2.innerText="Coupe Enfant";
-s3.innerText="Coupe Régulière";
-s4.innerText="Rasage";
-s5.innerText="Rasage + Barbe";
-s6.innerText="Coupe + Barbe";
-s7.innerText="Coupe VIP";
 }
 }
 
-/* DETECCIÓN AUTOMÁTICA */
 document.addEventListener("DOMContentLoaded", function(){
-let userLang = navigator.language || navigator.userLanguage;
-
-if(userLang.startsWith("es")){ setLang("es"); }
-else if(userLang.startsWith("en")){ setLang("en"); }
-else{ setLang("fr"); }
+let userLang=navigator.language||navigator.userLanguage;
+if(userLang.startsWith("es")){setLang("es");}
+else if(userLang.startsWith("en")){setLang("en");}
+else{setLang("fr");}
 });
 </script>
 
