@@ -3,28 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club des Coiffeurs VIP | Barbería en Gatineau QC</title>
 
-<meta name="description" content="Club des Coiffeurs VIP es una barbería premium en Gatineau, Québec.">
+<title>Club des Coiffeurs VIP | Barbería Premium en Gatineau QC</title>
+
+<meta name="description" content="Club des Coiffeurs VIP es una barbería premium en Gatineau, Québec. Cortes modernos, barbería profesional, afeitado y servicio VIP. Reserva tu cita online.">
+<meta name="keywords" content="barbería Gatineau, barbershop Gatineau, salon coiffure Gatineau, haircut Gatineau">
+<meta name="author" content="Club des Coiffeurs VIP">
 <meta name="theme-color" content="#0a0a0a">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Barbershop",
+ "name": "Club des Coiffeurs VIP",
+ "image": "logo.jpg",
+ "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "187 Rue Eddy",
+   "addressLocality": "Gatineau",
+   "addressRegion": "QC",
+   "postalCode": "J8X 2X2",
+   "addressCountry": "CA"
+ },
+ "telephone": "+1 819 639 5598",
+ "sameAs": [
+   "https://www.instagram.com/vip_club_barber"
+ ]
+}
+</script>
+
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
+
+body{
+background:#0a0a0a;
+color:#fff;
+overflow-x:hidden;
+}
+
 body::before{
 content:"";
 background:url("logo.jpg") no-repeat center;
 background-size:700px;
 opacity:0.18;
 position:fixed;
-top:0;left:0;width:100%;height:100%;z-index:-1;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 /* HERO */
+
 .hero{
 height:100vh;
 background:url("logo.jpg") no-repeat center;
@@ -38,14 +75,26 @@ text-align:center;
 position:relative;
 padding:20px;
 }
+
 .hero::after{
 content:"";
 position:absolute;
-top:0;left:0;width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.75);
 }
-.hero-content{position:relative;z-index:2;}
-.hero h1{font-size:42px;margin-bottom:10px;}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
 
 .language-switch{
 position:absolute;
@@ -53,6 +102,7 @@ top:20px;
 right:20px;
 z-index:3;
 }
+
 .language-switch button{
 background:transparent;
 border:1px solid #D4AF37;
@@ -64,80 +114,181 @@ cursor:pointer;
 font-size:12px;
 }
 
-.address{font-size:18px;color:#D4AF37;margin-top:10px;}
+.address{
+font-size:18px;
+color:#D4AF37;
+margin-top:10px;
+}
 
 .map-button{
-display:inline-block;margin-top:20px;padding:14px 32px;
-border-radius:40px;text-decoration:none;font-weight:600;
-font-size:15px;background:#D4AF37;color:#000;
+display:inline-block;
+margin-top:20px;
+padding:14px 32px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+font-size:15px;
+background:#D4AF37;
+color:#000;
 transition:0.4s;
 }
-.map-button:hover{transform:translateY(-6px);}
 
-.top-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:25px;}
-.top-buttons a{
-padding:12px 28px;border-radius:40px;text-decoration:none;
-font-weight:600;font-size:14px;transition:0.4s;
+.map-button:hover{
+transform:translateY(-6px);
 }
-.btn-primary{background:#D4AF37;color:#000;}
-.btn-outline{border:1px solid #D4AF37;color:#D4AF37;background:transparent;}
-.btn-outline:hover{background:#D4AF37;color:#000;}
 
-section{padding:100px 20px;text-align:center;}
-h2{margin-bottom:50px;color:#D4AF37;font-size:32px;}
+.top-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+}
+
+.top-buttons a{
+padding:12px 28px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+transition:0.4s;
+}
+
+.btn-primary{
+background:#D4AF37;
+color:#000;
+}
+
+.btn-outline{
+border:1px solid #D4AF37;
+color:#D4AF37;
+background:transparent;
+}
+
+.btn-outline:hover{
+background:#D4AF37;
+color:#000;
+}
+
+section{
+padding:100px 20px;
+text-align:center;
+}
+
+h2{
+margin-bottom:50px;
+color:#D4AF37;
+font-size:32px;
+}
 
 .services{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-gap:25px;max-width:1000px;margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:25px;
+max-width:1000px;
+margin:auto;
 }
+
 .service{
-padding:25px;border:1px solid #222;border-radius:15px;
-background:#111;transition:0.5s;
+padding:25px;
+border:1px solid #222;
+border-radius:15px;
+background:#111;
+transition:0.5s;
 }
-.service:hover{transform:translateY(-10px);}
-.price{font-size:18px;margin-top:10px;color:#D4AF37;font-weight:600;}
+
+.service:hover{
+transform:translateY(-10px);
+}
+
+.price{
+font-size:18px;
+margin-top:10px;
+color:#D4AF37;
+font-weight:600;
+}
 
 .gallery{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
+
 .gallery img{
-width:100%;height:260px;object-fit:cover;
-border-radius:15px;cursor:pointer;
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:15px;
+cursor:pointer;
 transition:0.4s;
 }
-.gallery img:hover{transform:scale(1.05);}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
 
 /* LIGHTBOX */
+
 .lightbox{
 display:none;
 position:fixed;
-top:0;left:0;width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.9);
 justify-content:center;
 align-items:center;
 z-index:9999;
 }
+
 .lightbox img{
 max-width:90%;
 max-height:80%;
 border-radius:15px;
 }
-.lightbox.active{display:flex;}
 
-.reviews{max-width:900px;margin:auto;display:grid;gap:25px;}
-.review{
-background:#111;padding:25px;border-radius:15px;
-border:1px solid #222;text-align:left;
+.lightbox.active{
+display:flex;
 }
-.stars{color:#D4AF37;margin-bottom:10px;font-size:18px;}
+
+.reviews{
+max-width:900px;
+margin:auto;
+display:grid;
+gap:25px;
+}
+
+.review{
+background:#111;
+padding:25px;
+border-radius:15px;
+border:1px solid #222;
+text-align:left;
+}
+
+.stars{
+color:#D4AF37;
+margin-bottom:10px;
+font-size:18px;
+}
 
 .final-message{
-background:#000;padding:90px 20px;font-size:20px;
-color:#D4AF37;text-align:center;line-height:1.8;
+background:#000;
+padding:90px 20px;
+font-size:20px;
+color:#D4AF37;
+text-align:center;
+line-height:1.8;
 }
 
-footer{background:#000;padding:25px;text-align:center;color:#888;}
+footer{
+background:#000;
+padding:25px;
+text-align:center;
+color:#888;
+}
+
 </style>
 </head>
 
@@ -150,9 +301,13 @@ footer{background:#000;padding:25px;text-align:center;color:#888;}
 </div>
 
 <section class="hero">
+
 <div class="hero-content">
+
 <h1>Club des Coiffeurs VIP</h1>
+
 <p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
+
 <div class="address">187 Rue Eddy, Gatineau, QC J8X 2X2</div>
 
 <a id="mapText"
@@ -161,45 +316,71 @@ target="_blank"
 class="map-button">📍 Voir l’emplacement</a>
 
 <div class="top-buttons">
-<a id="reserveText" href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start" class="btn-primary">Réserver</a>
-<a href="https://wa.me/18196395598" class="btn-outline">WhatsApp</a>
-<a id="callText" href="tel:18196395598" class="btn-outline">Appeler</a>
-<a href="https://www.instagram.com/vip_club_barber?igsh=MW1jaHI3dzl2YzFxYw%3D%3D&utm_source=qr" target="_blank" class="btn-outline">Instagram</a>
+
+<a id="reserveText"
+href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+class="btn-primary">Réserver</a>
+
+<a href="https://wa.me/18196395598"
+class="btn-outline">WhatsApp</a>
+
+<a id="callText"
+href="tel:18196395598"
+class="btn-outline">Appeler</a>
+
+<a href="https://www.instagram.com/vip_club_barber"
+target="_blank"
+class="btn-outline">Instagram</a>
+
 </div>
 </div>
 </section>
 
 <section>
+
 <h2 id="servicesTitle">Nos Services</h2>
+
 <div class="services">
-<div class="service"><h3 id="s1">Marcar Contornos</h3><div class="price">$15</div></div>
-<div class="service"><h3 id="s2">Corte de Pelo para Niños</h3><div class="price">$25</div></div>
-<div class="service"><h3 id="s3">Corte Regular</h3><div class="price">$35</div></div>
-<div class="service"><h3 id="s4">Rasurado</h3><div class="price">$25</div></div>
-<div class="service"><h3 id="s5">Rasurado + Barba</h3><div class="price">$40</div></div>
-<div class="service"><h3 id="s6">Corte + Barba</h3><div class="price">$45</div></div>
-<div class="service"><h3 id="s7">Corte VIP</h3><div class="price">$55</div></div>
+
+<div class="service"><h3 id="s1">Contours</h3><div class="price">$15</div></div>
+
+<div class="service"><h3 id="s2">Coupe Enfant</h3><div class="price">$25</div></div>
+
+<div class="service"><h3 id="s3">Coupe Régulière</h3><div class="price">$35</div></div>
+
+<div class="service"><h3 id="s4">Rasage</h3><div class="price">$25</div></div>
+
+<div class="service"><h3 id="s5">Rasage + Barbe</h3><div class="price">$40</div></div>
+
+<div class="service"><h3 id="s6">Coupe + Barbe</h3><div class="price">$45</div></div>
+
+<div class="service"><h3 id="s7">Coupe VIP</h3><div class="price">$55</div></div>
+
 </div>
 </section>
 
 <section>
+
 <h2>Galerie</h2>
+
 <div class="gallery">
-<img src="imagenes/foto1.jpg" loading="lazy">
-<img src="imagenes/foto2.jpg" loading="lazy">
-<img src="imagenes/foto3jpg.jpg" loading="lazy">
-<img src="imagenes/foto4.jpg" loading="lazy">
-<img src="imagenes/foto5.jpg" loading="lazy">
-<img src="imagenes/foto6.jpg" loading="lazy">
-<img src="imagenes/foto7.jpg" loading="lazy">
-<img src="imagenes/foto8.jpg" loading="lazy">
-<img src="imagenes/foto9.jpg" loading="lazy">
-<img src="imagenes/foto10.jpg" loading="lazy">
-<img src="imagenes/foto11.jpg" loading="lazy">
-<img src="imagenes/foto12.jpg" loading="lazy">
-<img src="imagenes/foto13.jpg" loading="lazy">
-<img src="imagenes/foto14.jpg" loading="lazy">
-<img src="imagenes/foto15.jpg" loading="lazy">
+
+<img src="imagenes/foto1.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto2.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto3jpg.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto4.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto5.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto6.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto7.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto8.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto9.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto10.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto11.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto12.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto13.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto14.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto15.jpg" loading="lazy" alt="Barbería en Gatineau">
+
 </div>
 </section>
 
@@ -211,58 +392,98 @@ class="map-button">📍 Voir l’emplacement</a>
 Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
 </section>
 
-<footer>© 2026 Club des Coiffeurs VIP</footer>
+<footer>
+© 2026 Club des Coiffeurs VIP
+</footer>
 
 <script>
+
 /* LIGHTBOX */
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=lightbox.querySelector("img");
+
+const lightbox=document.getElementById("lightbox")
+const lightboxImg=lightbox.querySelector("img")
 
 document.querySelectorAll(".gallery img").forEach(img=>{
 img.addEventListener("click",()=>{
-lightbox.classList.add("active");
-lightboxImg.src=img.src;
-});
-});
+lightbox.classList.add("active")
+lightboxImg.src=img.src
+})
+})
 
 lightbox.addEventListener("click",()=>{
-lightbox.classList.remove("active");
-});
+lightbox.classList.remove("active")
+})
 
-/* IDIOMAS + AUTO DETECCIÓN */
+/* IDIOMAS */
+
 function setLang(lang){
+
 if(lang==="es"){
-subtitle.innerText="Barbería Premium – Gatineau, Québec";
-servicesTitle.innerText="Nuestros Servicios";
-reserveText.innerText="Reservar";
-callText.innerText="Llamar";
-mapText.innerText="📍 Ver ubicación";
-finalText.innerText="Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.";
-}
-if(lang==="en"){
-subtitle.innerText="Premium Barbershop – Gatineau, Quebec";
-servicesTitle.innerText="Our Services";
-reserveText.innerText="Book Now";
-callText.innerText="Call";
-mapText.innerText="📍 View Location";
-finalText.innerText="We are living proof that dreams come true with discipline, dedication and determination.";
-}
-if(lang==="fr"){
-subtitle.innerText="Salon de Coiffure – Gatineau, Québec";
-servicesTitle.innerText="Nos Services";
-reserveText.innerText="Réserver";
-callText.innerText="Appeler";
-mapText.innerText="📍 Voir l’emplacement";
-finalText.innerText="Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination.";
-}
+subtitle.innerText="Barbería Premium – Gatineau, Québec"
+servicesTitle.innerText="Nuestros Servicios"
+reserveText.innerText="Reservar"
+callText.innerText="Llamar"
+mapText.innerText="📍 Ver ubicación"
+
+s1.innerText="Marcar Contornos"
+s2.innerText="Corte para Niños"
+s3.innerText="Corte Regular"
+s4.innerText="Rasurado"
+s5.innerText="Rasurado + Barba"
+s6.innerText="Corte + Barba"
+s7.innerText="Corte VIP"
+
+finalText.innerText="Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación."
 }
 
-document.addEventListener("DOMContentLoaded", function(){
-let userLang=navigator.language||navigator.userLanguage;
-if(userLang.startsWith("es")){setLang("es");}
-else if(userLang.startsWith("en")){setLang("en");}
-else{setLang("fr");}
-});
+if(lang==="en"){
+subtitle.innerText="Premium Barbershop – Gatineau, Quebec"
+servicesTitle.innerText="Our Services"
+reserveText.innerText="Book Now"
+callText.innerText="Call"
+mapText.innerText="📍 View Location"
+
+s1.innerText="Line Up"
+s2.innerText="Kids Haircut"
+s3.innerText="Regular Haircut"
+s4.innerText="Shave"
+s5.innerText="Shave + Beard"
+s6.innerText="Haircut + Beard"
+s7.innerText="VIP Haircut"
+
+finalText.innerText="We are living proof that dreams come true with discipline, dedication and determination."
+}
+
+if(lang==="fr"){
+subtitle.innerText="Salon de Coiffure – Gatineau, Québec"
+servicesTitle.innerText="Nos Services"
+reserveText.innerText="Réserver"
+callText.innerText="Appeler"
+mapText.innerText="📍 Voir l’emplacement"
+
+s1.innerText="Contours"
+s2.innerText="Coupe Enfant"
+s3.innerText="Coupe Régulière"
+s4.innerText="Rasage"
+s5.innerText="Rasage + Barbe"
+s6.innerText="Coupe + Barbe"
+s7.innerText="Coupe VIP"
+
+finalText.innerText="Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination."
+}
+
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+let userLang=navigator.language||navigator.userLanguage
+
+if(userLang.startsWith("es")){setLang("es")}
+else if(userLang.startsWith("en")){setLang("en")}
+else{setLang("fr")}
+
+})
+
 </script>
 
 </body>
