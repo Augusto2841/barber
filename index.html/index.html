@@ -16,27 +16,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Barbershop",
- "name": "Club des Coiffeurs VIP",
- "image": "logo.jpg",
- "address": {
-   "@type": "PostalAddress",
-   "streetAddress": "187 Rue Eddy",
-   "addressLocality": "Gatineau",
-   "addressRegion": "QC",
-   "postalCode": "J8X 2X2",
-   "addressCountry": "CA"
- },
- "telephone": "+1 819 639 5598",
- "sameAs": [
-   "https://www.instagram.com/vip_club_barber"
- ]
-}
-</script>
-
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
@@ -59,8 +38,6 @@ width:100%;
 height:100%;
 z-index:-1;
 }
-
-/* HERO */
 
 .hero{
 height:100vh;
@@ -130,11 +107,6 @@ font-weight:600;
 font-size:15px;
 background:#D4AF37;
 color:#000;
-transition:0.4s;
-}
-
-.map-button:hover{
-transform:translateY(-6px);
 }
 
 .top-buttons{
@@ -151,7 +123,6 @@ border-radius:40px;
 text-decoration:none;
 font-weight:600;
 font-size:14px;
-transition:0.4s;
 }
 
 .btn-primary{
@@ -163,11 +134,6 @@ color:#000;
 border:1px solid #D4AF37;
 color:#D4AF37;
 background:transparent;
-}
-
-.btn-outline:hover{
-background:#D4AF37;
-color:#000;
 }
 
 section{
@@ -194,11 +160,6 @@ padding:25px;
 border:1px solid #222;
 border-radius:15px;
 background:#111;
-transition:0.5s;
-}
-
-.service:hover{
-transform:translateY(-10px);
 }
 
 .price{
@@ -220,14 +181,7 @@ height:260px;
 object-fit:cover;
 border-radius:15px;
 cursor:pointer;
-transition:0.4s;
 }
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* LIGHTBOX */
 
 .lightbox{
 display:none;
@@ -252,34 +206,11 @@ border-radius:15px;
 display:flex;
 }
 
-.reviews{
-max-width:900px;
-margin:auto;
-display:grid;
-gap:25px;
-}
-
-.review{
-background:#111;
-padding:25px;
-border-radius:15px;
-border:1px solid #222;
-text-align:left;
-}
-
-.stars{
-color:#D4AF37;
-margin-bottom:10px;
-font-size:18px;
-}
-
 .final-message{
 background:#000;
 padding:90px 20px;
 font-size:20px;
 color:#D4AF37;
-text-align:center;
-line-height:1.8;
 }
 
 footer{
@@ -289,110 +220,7 @@ text-align:center;
 color:#888;
 }
 
-</style>
-</head>
-
-<body>
-
-<div class="language-switch">
-<button onclick="setLang('fr')">FR</button>
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('es')">ES</button>
-</div>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Club des Coiffeurs VIP</h1>
-
-<p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
-
-<div class="address">187 Rue Eddy, Gatineau, QC J8X 2X2</div>
-
-<a id="mapText"
-href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy,+Gatineau,+QC+J8X+2X2"
-target="_blank"
-class="map-button">📍 Voir l’emplacement</a>
-
-<div class="top-buttons">
-
-<a id="reserveText"
-href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
-class="btn-primary">Réserver</a>
-
-<a href="https://wa.me/18196395598"
-class="btn-outline">WhatsApp</a>
-
-<a id="callText"
-href="tel:18196395598"
-class="btn-outline">Appeler</a>
-
-<a href="https://www.instagram.com/vip_club_barber"
-target="_blank"
-class="btn-outline">Instagram</a>
-
-</div>
-</div>
-</section>
-
-<section>
-
-<h2 id="servicesTitle">Nos Services</h2>
-
-<div class="services">
-
-<div class="service"><h3 id="s1">Contours</h3><div class="price">$15</div></div>
-<div class="service"><h3 id="s2">Coupe Enfant</h3><div class="price">$25</div></div>
-<div class="service"><h3 id="s3">Coupe Régulière</h3><div class="price">$35</div></div>
-<div class="service"><h3 id="s4">Rasage</h3><div class="price">$25</div></div>
-<div class="service"><h3 id="s5">Rasage + Barbe</h3><div class="price">$40</div></div>
-<div class="service"><h3 id="s6">Coupe + Barbe</h3><div class="price">$45</div></div>
-<div class="service"><h3 id="s7">Coupe VIP</h3><div class="price">$55</div></div>
-
-</div>
-</section>
-
-<section>
-
-<h2>Galerie</h2>
-
-<div class="gallery">
-
-<img src="imagenes/foto1.jpg" loading="lazy">
-<img src="imagenes/foto2.jpg" loading="lazy">
-<img src="imagenes/foto3jpg.jpg" loading="lazy">
-<img src="imagenes/foto4.jpg" loading="lazy">
-<img src="imagenes/foto5.jpg" loading="lazy">
-<img src="imagenes/foto6.jpg" loading="lazy">
-<img src="imagenes/foto7.jpg" loading="lazy">
-<img src="imagenes/foto8.jpg" loading="lazy">
-<img src="imagenes/foto9.jpg" loading="lazy">
-<img src="imagenes/foto10.jpg" loading="lazy">
-<img src="imagenes/foto11.jpg" loading="lazy">
-<img src="imagenes/foto12.jpg" loading="lazy">
-<img src="imagenes/foto13.jpg" loading="lazy">
-<img src="imagenes/foto14.jpg" loading="lazy">
-<img src="imagenes/foto15.jpg" loading="lazy">
-
-</div>
-</section>
-
-<div class="lightbox" id="lightbox">
-<img src="">
-</div>
-
-<section class="final-message" id="finalText">
-Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
-</section>
-
-<footer>
-© 2026 Club des Coiffeurs VIP
-</footer>
-
-<!-- AI CHAT -->
-
-<style>
+/* CHAT */
 
 #vip-chat-button{
 position:fixed;
@@ -445,24 +273,124 @@ color:#fff;
 }
 
 </style>
+</head>
+
+<body>
+
+<div class="language-switch">
+<button onclick="setLang('fr')">FR</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+</div>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Club des Coiffeurs VIP</h1>
+<p id="subtitle">Salon de Coiffure – Gatineau, Québec</p>
+
+<div class="address">187 Rue Eddy, Gatineau</div>
+
+<a id="mapText"
+href="https://www.google.com/maps/search/?api=1&query=187+Rue+Eddy+Gatineau"
+target="_blank"
+class="map-button">📍 Voir l’emplacement</a>
+
+<div class="top-buttons">
+
+<a id="reserveText"
+href="https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+class="btn-primary">Réserver</a>
+
+<a href="https://wa.me/18196395598"
+class="btn-outline">WhatsApp</a>
+
+<a id="callText"
+href="tel:18196395598"
+class="btn-outline">Appeler</a>
+
+</div>
+</div>
+</section>
+
+<section>
+
+<h2 id="servicesTitle">Nos Services</h2>
+
+<div class="services">
+
+<div class="service"><h3 id="s1">Contours</h3><div class="price">$15</div></div>
+<div class="service"><h3 id="s2">Coupe Enfant</h3><div class="price">$25</div></div>
+<div class="service"><h3 id="s3">Coupe Régulière</h3><div class="price">$35</div></div>
+<div class="service"><h3 id="s4">Rasage</h3><div class="price">$25</div></div>
+<div class="service"><h3 id="s5">Rasage + Barbe</h3><div class="price">$40</div></div>
+<div class="service"><h3 id="s6">Coupe + Barbe</h3><div class="price">$45</div></div>
+<div class="service"><h3 id="s7">Coupe VIP</h3><div class="price">$55</div></div>
+
+</div>
+</section>
+
+<div class="final-message" id="finalText">
+Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación.
+</div>
+
+<footer>
+© 2026 Club des Coiffeurs VIP
+</footer>
 
 <div id="vip-chat-button">💬 Chat</div>
 
 <div id="vip-chat-box">
-
-<div id="vip-chat-header">
-Club des Coiffeurs VIP
-</div>
-
-<div id="vip-chat-messages">
-Bonjour 👋 Comment puis-je vous aider ?
-</div>
-
+<div id="vip-chat-header">Club des Coiffeurs VIP</div>
+<div id="vip-chat-messages">Bonjour 👋 Comment puis-je vous aider ?</div>
 <input id="vip-chat-input" placeholder="Écrire un message...">
-
 </div>
 
 <script>
+
+/* IDIOMAS */
+
+function setLang(lang){
+
+const subtitle=document.getElementById("subtitle")
+const servicesTitle=document.getElementById("servicesTitle")
+const reserveText=document.getElementById("reserveText")
+const callText=document.getElementById("callText")
+const mapText=document.getElementById("mapText")
+const finalText=document.getElementById("finalText")
+
+const s1=document.getElementById("s1")
+const s2=document.getElementById("s2")
+const s3=document.getElementById("s3")
+const s4=document.getElementById("s4")
+const s5=document.getElementById("s5")
+const s6=document.getElementById("s6")
+const s7=document.getElementById("s7")
+
+if(lang==="es"){
+subtitle.innerText="Barbería Premium – Gatineau"
+servicesTitle.innerText="Nuestros Servicios"
+reserveText.innerText="Reservar"
+callText.innerText="Llamar"
+mapText.innerText="📍 Ver ubicación"
+}
+
+if(lang==="en"){
+subtitle.innerText="Premium Barbershop – Gatineau"
+servicesTitle.innerText="Our Services"
+reserveText.innerText="Book"
+callText.innerText="Call"
+mapText.innerText="📍 View location"
+}
+
+if(lang==="fr"){
+subtitle.innerText="Salon de Coiffure – Gatineau"
+servicesTitle.innerText="Nos Services"
+reserveText.innerText="Réserver"
+callText.innerText="Appeler"
+mapText.innerText="📍 Voir l’emplacement"
+}
+
+}
 
 /* CHAT */
 
@@ -478,33 +406,37 @@ box.style.flexDirection="column"
 
 }
 
+function replyAI(text){
+
+text=text.toLowerCase()
+
+if(text.includes("price")||text.includes("precio")||text.includes("prix"))
+return "Haircuts start at $35. VIP haircut $55."
+
+if(text.includes("book")||text.includes("reservar")||text.includes("réserver"))
+return "Book here 👉 https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
+
+if(text.includes("address")||text.includes("direccion")||text.includes("adresse"))
+return "We are located at 187 Rue Eddy, Gatineau."
+
+if(text.includes("review")||text.includes("reseña"))
+return "Leave a review ⭐ https://maps.app.goo.gl/1N8A4VXsSo6Euc9G9"
+
+return "Ask about prices, booking, hours or location."
+
+}
+
 input.addEventListener("keypress",function(e){
 
 if(e.key==="Enter"){
 
-let text=input.value.toLowerCase()
+let text=input.value
 
-messages.innerHTML+="<div>👤 "+input.value+"</div>"
+messages.innerHTML+="<div>👤 "+text+"</div>"
 
-let reply="Merci pour votre message."
+let response=replyAI(text)
 
-if(text.includes("price")||text.includes("precio")||text.includes("prix")){
-reply="Haircuts start at $35. VIP haircut $55."
-}
-
-if(text.includes("address")||text.includes("direccion")||text.includes("adresse")){
-reply="We are located at 187 Rue Eddy, Gatineau."
-}
-
-if(text.includes("book")||text.includes("reservar")||text.includes("réserver")){
-reply='Book here 👉 https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start'
-}
-
-if(text.includes("review")){
-reply='Leave a review ⭐ https://maps.app.goo.gl/1N8A4VXsSo6Euc9G9'
-}
-
-messages.innerHTML+="<div>🤖 "+reply+"</div>"
+messages.innerHTML+="<div>🤖 "+response+"</div>"
 
 messages.scrollTop=messages.scrollHeight
 
