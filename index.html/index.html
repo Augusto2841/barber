@@ -23,9 +23,29 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"Barbershop",
+"name":"Club des Coiffeurs VIP",
+"image":"logo.jpg",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"187 Rue Eddy",
+"addressLocality":"Gatineau",
+"addressRegion":"QC",
+"postalCode":"J8X 2X2",
+"addressCountry":"CA"
+},
+"telephone":"+1 819 639 5598",
+"priceRange":"$$",
+"sameAs":[
+"https://www.instagram.com/vip_club_barber"
+]
+}
+</script>
 
-/* TODO TU CSS ORIGINAL (SIN CAMBIOS VISUALES) */
+<style>
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
@@ -47,6 +67,8 @@ width:100%;
 height:100%;
 z-index:-1;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -189,7 +211,6 @@ width:100%;
 height:260px;
 object-fit:cover;
 border-radius:15px;
-cursor:pointer;
 }
 
 .final-message{
@@ -259,6 +280,21 @@ background:#000;
 color:#fff;
 }
 
+/* REVIEW BUTTON */
+
+#review-button{
+position:fixed;
+bottom:25px;
+left:25px;
+background:#D4AF37;
+color:#000;
+padding:14px 18px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+z-index:9999;
+}
+
 </style>
 </head>
 
@@ -297,6 +333,10 @@ class="btn-outline">WhatsApp</a>
 <a id="callText"
 href="tel:18196395598"
 class="btn-outline">Appeler</a>
+
+<a href="https://www.instagram.com/vip_club_barber"
+target="_blank"
+class="btn-outline">Instagram</a>
 
 </div>
 </div>
@@ -352,6 +392,8 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 © 2026 Club des Coiffeurs VIP
 </footer>
 
+<a id="review-button" href="https://maps.app.goo.gl/1N8A4VXsSo6Euc9G9" target="_blank">⭐ Review</a>
+
 <div id="vip-chat-button">💬 Chat</div>
 
 <div id="vip-chat-box">
@@ -406,7 +448,7 @@ mapText.innerText="📍 Voir l’emplacement"
 
 }
 
-/* CHAT */
+/* CHAT INTELIGENTE */
 
 const btn=document.getElementById("vip-chat-button")
 const box=document.getElementById("vip-chat-box")
@@ -424,20 +466,28 @@ function replyAI(text){
 
 text=text.toLowerCase()
 
-if(text.includes("price")||text.includes("precio")||text.includes("prix"))
+if(text.includes("price")||text.includes("precio")||text.includes("prix")||text.includes("cost"))
 return "Haircuts start at $35. VIP haircut $55."
 
-if(text.includes("book")||text.includes("reservar")||text.includes("réserver"))
+if(text.includes("fade"))
+return "Yes we specialize in fades and modern cuts."
+
+if(text.includes("beard"))
+return "We offer beard trims and full shave services."
+
+if(text.includes("book")||text.includes("appointment")||text.includes("reservar")||text.includes("réserver"))
 return "Book here 👉 https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start"
 
-if(text.includes("address")||text.includes("direccion")||text.includes("adresse"))
+if(text.includes("walk in"))
+return "Yes we accept walk-ins depending on availability."
+
+if(text.includes("address")||text.includes("location")||text.includes("direccion")||text.includes("adresse"))
 return "We are located at 187 Rue Eddy, Gatineau."
 
 if(text.includes("review"))
 return "Leave a review ⭐ https://maps.app.goo.gl/1N8A4VXsSo6Euc9G9"
 
-return "Ask about prices, booking or location."
-
+return "You can ask about haircuts, prices, booking or location."
 }
 
 input.addEventListener("keypress",function(e){
