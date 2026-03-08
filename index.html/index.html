@@ -343,17 +343,11 @@ class="btn-outline">Instagram</a>
 <div class="services">
 
 <div class="service"><h3 id="s1">Contours</h3><div class="price">$15</div></div>
-
 <div class="service"><h3 id="s2">Coupe Enfant</h3><div class="price">$25</div></div>
-
 <div class="service"><h3 id="s3">Coupe Régulière</h3><div class="price">$35</div></div>
-
 <div class="service"><h3 id="s4">Rasage</h3><div class="price">$25</div></div>
-
 <div class="service"><h3 id="s5">Rasage + Barbe</h3><div class="price">$40</div></div>
-
 <div class="service"><h3 id="s6">Coupe + Barbe</h3><div class="price">$45</div></div>
-
 <div class="service"><h3 id="s7">Coupe VIP</h3><div class="price">$55</div></div>
 
 </div>
@@ -365,21 +359,21 @@ class="btn-outline">Instagram</a>
 
 <div class="gallery">
 
-<img src="imagenes/foto1.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto2.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto3jpg.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto4.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto5.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto6.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto7.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto8.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto9.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto10.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto11.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto12.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto13.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto14.jpg" loading="lazy" alt="Barbería en Gatineau">
-<img src="imagenes/foto15.jpg" loading="lazy" alt="Barbería en Gatineau">
+<img src="imagenes/foto1.jpg" loading="lazy">
+<img src="imagenes/foto2.jpg" loading="lazy">
+<img src="imagenes/foto3jpg.jpg" loading="lazy">
+<img src="imagenes/foto4.jpg" loading="lazy">
+<img src="imagenes/foto5.jpg" loading="lazy">
+<img src="imagenes/foto6.jpg" loading="lazy">
+<img src="imagenes/foto7.jpg" loading="lazy">
+<img src="imagenes/foto8.jpg" loading="lazy">
+<img src="imagenes/foto9.jpg" loading="lazy">
+<img src="imagenes/foto10.jpg" loading="lazy">
+<img src="imagenes/foto11.jpg" loading="lazy">
+<img src="imagenes/foto12.jpg" loading="lazy">
+<img src="imagenes/foto13.jpg" loading="lazy">
+<img src="imagenes/foto14.jpg" loading="lazy">
+<img src="imagenes/foto15.jpg" loading="lazy">
 
 </div>
 </section>
@@ -396,91 +390,127 @@ Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicac
 © 2026 Club des Coiffeurs VIP
 </footer>
 
+<!-- AI CHAT -->
+
+<style>
+
+#vip-chat-button{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#D4AF37;
+color:#000;
+padding:14px 18px;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+z-index:9999;
+}
+
+#vip-chat-box{
+position:fixed;
+bottom:90px;
+right:25px;
+width:300px;
+background:#111;
+border:1px solid #333;
+border-radius:15px;
+display:none;
+flex-direction:column;
+overflow:hidden;
+z-index:9999;
+}
+
+#vip-chat-header{
+background:#D4AF37;
+color:#000;
+padding:10px;
+font-weight:600;
+text-align:center;
+}
+
+#vip-chat-messages{
+padding:10px;
+height:200px;
+overflow-y:auto;
+font-size:14px;
+}
+
+#vip-chat-input{
+border:none;
+padding:10px;
+width:100%;
+background:#000;
+color:#fff;
+}
+
+</style>
+
+<div id="vip-chat-button">💬 Chat</div>
+
+<div id="vip-chat-box">
+
+<div id="vip-chat-header">
+Club des Coiffeurs VIP
+</div>
+
+<div id="vip-chat-messages">
+Bonjour 👋 Comment puis-je vous aider ?
+</div>
+
+<input id="vip-chat-input" placeholder="Écrire un message...">
+
+</div>
+
 <script>
 
-/* LIGHTBOX */
+/* CHAT */
 
-const lightbox=document.getElementById("lightbox")
-const lightboxImg=lightbox.querySelector("img")
+const btn=document.getElementById("vip-chat-button")
+const box=document.getElementById("vip-chat-box")
+const input=document.getElementById("vip-chat-input")
+const messages=document.getElementById("vip-chat-messages")
 
-document.querySelectorAll(".gallery img").forEach(img=>{
-img.addEventListener("click",()=>{
-lightbox.classList.add("active")
-lightboxImg.src=img.src
-})
-})
+btn.onclick=()=>{
 
-lightbox.addEventListener("click",()=>{
-lightbox.classList.remove("active")
-})
-
-/* IDIOMAS */
-
-function setLang(lang){
-
-if(lang==="es"){
-subtitle.innerText="Barbería Premium – Gatineau, Québec"
-servicesTitle.innerText="Nuestros Servicios"
-reserveText.innerText="Reservar"
-callText.innerText="Llamar"
-mapText.innerText="📍 Ver ubicación"
-
-s1.innerText="Marcar Contornos"
-s2.innerText="Corte para Niños"
-s3.innerText="Corte Regular"
-s4.innerText="Rasurado"
-s5.innerText="Rasurado + Barba"
-s6.innerText="Corte + Barba"
-s7.innerText="Corte VIP"
-
-finalText.innerText="Somos la fiel prueba de que todos los sueños se cumplen con disciplina, dedicación y determinación."
-}
-
-if(lang==="en"){
-subtitle.innerText="Premium Barbershop – Gatineau, Quebec"
-servicesTitle.innerText="Our Services"
-reserveText.innerText="Book Now"
-callText.innerText="Call"
-mapText.innerText="📍 View Location"
-
-s1.innerText="Line Up"
-s2.innerText="Kids Haircut"
-s3.innerText="Regular Haircut"
-s4.innerText="Shave"
-s5.innerText="Shave + Beard"
-s6.innerText="Haircut + Beard"
-s7.innerText="VIP Haircut"
-
-finalText.innerText="We are living proof that dreams come true with discipline, dedication and determination."
-}
-
-if(lang==="fr"){
-subtitle.innerText="Salon de Coiffure – Gatineau, Québec"
-servicesTitle.innerText="Nos Services"
-reserveText.innerText="Réserver"
-callText.innerText="Appeler"
-mapText.innerText="📍 Voir l’emplacement"
-
-s1.innerText="Contours"
-s2.innerText="Coupe Enfant"
-s3.innerText="Coupe Régulière"
-s4.innerText="Rasage"
-s5.innerText="Rasage + Barbe"
-s6.innerText="Coupe + Barbe"
-s7.innerText="Coupe VIP"
-
-finalText.innerText="Nous sommes la preuve fidèle que tous les rêves se réalisent avec discipline, dévouement et détermination."
-}
+box.style.display=box.style.display==="flex"?"none":"flex"
+box.style.flexDirection="column"
 
 }
 
-document.addEventListener("DOMContentLoaded",function(){
+input.addEventListener("keypress",function(e){
 
-let userLang=navigator.language||navigator.userLanguage
+if(e.key==="Enter"){
 
-if(userLang.startsWith("es")){setLang("es")}
-else if(userLang.startsWith("en")){setLang("en")}
-else{setLang("fr")}
+let text=input.value.toLowerCase()
+
+messages.innerHTML+="<div>👤 "+input.value+"</div>"
+
+let reply="Merci pour votre message."
+
+if(text.includes("price")||text.includes("precio")||text.includes("prix")){
+reply="Haircuts start at $35. VIP haircut $55."
+}
+
+if(text.includes("address")||text.includes("direccion")||text.includes("adresse")){
+reply="We are located at 187 Rue Eddy, Gatineau."
+}
+
+if(text.includes("book")||text.includes("reservar")||text.includes("réserver")){
+reply='Book here 👉 https://app.squareup.com/appointments/book/84142bqteeinvp/LJRMN6ZQYMG9A/start'
+}
+
+if(text.includes("review")){
+reply='Leave a review ⭐ https://maps.app.goo.gl/1N8A4VXsSo6Euc9G9'
+}
+
+messages.innerHTML+="<div>🤖 "+reply+"</div>"
+
+messages.scrollTop=messages.scrollHeight
+
+input.value=""
+
+}
 
 })
 
